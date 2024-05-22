@@ -1,0 +1,135 @@
+/*placeholder for line between sections */
+%line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 37px;
+    z-index: 999;
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+    z-index: 9999;
+}
+.yellowLine{
+    @extend %line;
+    background-image: url("../images/bigline.png");
+}
+.pinkLine{
+    background-image: url("../images/binkLine.png");
+    @extend %line;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.paddingSections{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.showItems {
+    position: relative;
+    z-index: 999;
+}
+.d-flex{
+    display: flex;
+}
+.d-inline-block{
+    display: inline-block;
+}
+.d-block{
+display: block;
+}
+.flex-column{
+    flex-direction: column;
+}
+.align-items-start{
+    align-items: flex-start;
+}
+.align-items-center{
+    align-items: center;
+}
+.align-items-end{
+    align-items: flex-end;
+}
+.position-relative{
+    position: relative;
+}
+.position-absolute{
+    position: absolute !important;
+}
+.top-0{
+    top: 0 !important;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+.text-center{
+    text-align: center;
+}
+.upperCaseFirstLtr{
+   text-transform: capitalize;
+}
+/*helpers for sections*/
+.drkBluebkground{
+    background-color: $drkBlue;
+}
+.overlayBottomTop{
+    position: relative;
+
+    &::after {
+        @include after();
+        background-image: linear-gradient(
+          180deg,
+          #040720 0%,
+          rgba(4, 7, 32, 0.0001) 100%
+        );
+        height: 30%;
+      }
+      &::before {
+        @include before();
+        background-image: linear-gradient(
+          0deg,
+          #040720 0%,
+          rgba(4, 7, 32, 0.0001) 100%
+        );
+        height: 30%;
+        top: auto;
+        bottom: 0;
+        /* Rectangle Copy */
+    
+    
+    
+      }
+}
+%customShrink{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
