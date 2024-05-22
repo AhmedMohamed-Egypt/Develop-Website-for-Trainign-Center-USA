@@ -1,24 +1,5 @@
 /*placeholder for line between sections */
-%line{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 37px;
-    z-index: 999;
-    background-repeat: no-repeat;
-    height: 70px;
-    background-size: contain;
-    z-index: 9999;
-}
-.yellowLine{
-    @extend %line;
-    background-image: url("../images/bigline.png");
-}
-.pinkLine{
-    background-image: url("../images/binkLine.png");
-    @extend %line;
-}
+
 
 *{
     margin: 0;
@@ -96,38 +77,17 @@ display: block;
 .upperCaseFirstLtr{
    text-transform: capitalize;
 }
+.bkwhite{
+    background-color: $white;
+}
+button{
+    background: none;
+    border: none;
+    outline: 0;
+}
 /*helpers for sections*/
-.drkBluebkground{
-    background-color: $drkBlue;
-}
-.overlayBottomTop{
-    position: relative;
 
-    &::after {
-        @include after();
-        background-image: linear-gradient(
-          180deg,
-          #040720 0%,
-          rgba(4, 7, 32, 0.0001) 100%
-        );
-        height: 30%;
-      }
-      &::before {
-        @include before();
-        background-image: linear-gradient(
-          0deg,
-          #040720 0%,
-          rgba(4, 7, 32, 0.0001) 100%
-        );
-        height: 30%;
-        top: auto;
-        bottom: 0;
-        /* Rectangle Copy */
-    
-    
-    
-      }
-}
+
 %customShrink{
     width: 90%;
     margin-left: auto;

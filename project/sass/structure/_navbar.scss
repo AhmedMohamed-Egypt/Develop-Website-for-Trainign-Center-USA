@@ -1,0 +1,17 @@
+.navbarDew{
+
+}
+.navList{
+   li{
+    >a{
+        &.active{
+            color: $blue;
+        }
+    }
+    &:not(:last-child){
+        >a{
+            margin-right: 30px;
+        }
+    }
+   }
+}

@@ -1,0 +1,23 @@
+.learnmoreBtn{
+    color: $blue;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.closeBtn {
+    @include setElmnt(20,20,transparent,4);
+    background-color: $scondryBlue;
+    position: relative;
+    svg{
+        @include cntrElmnt();
+    }
+}
+.login{
+  
+}
+.signUp{
+  background-color: $green;
+  padding: 14px 17px;
+}
+

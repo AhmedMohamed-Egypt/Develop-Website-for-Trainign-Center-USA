@@ -20,7 +20,7 @@
 }
 /*padding */
 @for $i from 1 through 60 {
-  .pdtop-#{$i} {
+  .pdt-#{$i} {
     padding-top: $i + px;
   }
 }
@@ -37,6 +37,11 @@
 @for $i from 1 through 60 {
   .pdr-#{$i} {
     padding-right: $i + px;
+  }
+}
+@for $i from 1 through 50 {
+  .radius-#{$i} {
+    border-radius: $i + px;
   }
 }
 /*center elem*/
@@ -62,3 +67,11 @@
 @mixin before(){
   @extend %pseduElement;
 }
+@mixin setElmnt($width,$height,$color,$borderRadius){
+  width: $width+px;
+  height: $height+px;
+  border:1px solid $color;
+  border-radius: $borderRadius+px;
+}
+
+

@@ -1,11 +1,8 @@
-.container-def{
-  width: 1450px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 92%;
-  padding-left: 25px;
-  padding-right: 25px;
-  &.shrink{
-    max-width: 80%;
-  }
+body{
+  font-family: "DM Sans", sans-serif;
+
+}
+.container__navbarDew {
+max-width: 75%;
+margin: auto;
 }

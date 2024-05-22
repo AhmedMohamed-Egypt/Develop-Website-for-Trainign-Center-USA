@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /*loop font size*/
 @for $i from 1 through 50{
@@ -11,75 +11,20 @@
     font-weight: #{$i*100};
   }
 }
-@font-face {
-  font-family: 'LamaReg';
-  src: url("../fonts/LamaSans-Regular.ttf");
+.weight-bold{
+  font-weight: bold;
+}
+.font-dmsans{
+  font-family: "DM Sans", sans-serif;
 }
 
-@font-face {
-  font-family: 'lamaBold';
-  src: url("../fonts/LamaSans-Bold.ttf");
-}
-@font-face {
-  font-family: 'lamaExtraBold';
-  src: url("../fonts/LamaSans-ExtraBold.ttf");
-}
-@font-face {
-  font-family: 'lamaMedium';
-  src: url("../fonts/LamaSans-Medium.ttf");
-}
-@font-face {
-  font-family: 'numericFont';
-  src: url("../fonts/E1234.ttf");
-}
-@font-face {
-  font-family: 'lamaLight';
-  src: url("../fonts/LamaSans-Light.ttf");
-}
-.lightLtrSpacing{
-  letter-spacing: .25px;
-}
 
-.ltrspacing{
-  letter-spacing: 1.5px;
-}
-.ltrspacingNav{
-  letter-spacing: .85px;
-}
-.ltrspac-2{
-  letter-spacing: 2px;
-}
-.ltrspac-3{
-  letter-spacing: 3px;
-}
-.lama-reg{
-  font-family: 'LamaReg';
-}
-.lama-bold{
-  font-family: 'lamaBold';
-}
-.lama-medium{
-  font-family: 'lamaMedium';
-}
-.lama-light{
-  font-family: 'lamaLight';
-}
-.fontRajdhani{
-  font-family: "Rajdhani", sans-serif;
-
-}
 .txtLHeight{
   line-height: 1.6;
 }
 /*h2 heading Title */
 .h2Heading{
-  font-family: "Rajdhani", sans-serif;
-  font-size: 40px;
-  color: $white;
-  letter-spacing: 1.25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
+
   
 }
 

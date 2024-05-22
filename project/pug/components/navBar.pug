@@ -1,0 +1,15 @@
+- var list = ["Home","About","Features","Pricing"]
+
+
+.container__navbarDew 
+ div(class="navbarDew d-flex align-items-center justify-content-between pdt-50") 
+  a(href="#" class="d-block ")
+   img(src="images/logo.png")
+  ul(class="navList d-flex align-items-center ") 
+   - for(let i =  0 ; i < list.length;i++)
+    li
+     a(href="#" class=`${i==0?"active":""}  font-dmsans weight-500 size-16 drkBlue`)=list[i]
+  .logAccount 
+   button(class="login green weight-bold size-16 mrt-20") Sign in 
+   button(class="signUp weight-bold size-16 scndryWhite radius-28") Sign Up
+      
