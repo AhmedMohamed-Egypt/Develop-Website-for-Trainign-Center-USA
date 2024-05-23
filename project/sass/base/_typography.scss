@@ -40,7 +40,7 @@
   content: "\e901";
 }
 /*loop font size*/
-@for $i from 1 through 50{
+@for $i from 1 through 60{
   .size-#{$i}{
     font-size: $i+px;
   }

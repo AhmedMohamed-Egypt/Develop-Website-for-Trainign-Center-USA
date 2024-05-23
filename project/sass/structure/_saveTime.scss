@@ -1,0 +1,48 @@
+.saveTime{
+    margin-top: 150px;
+    &__container{
+        background-color: $grey;
+        border-radius: 22px;
+        max-width: 990px;
+        margin: auto;
+        padding: 60px 0;
+    }
+    &__estimate{
+        background-color: $white;
+        padding: 10px 25px;
+        border-radius: 24px;
+        padding: 30px 80px;
+        padding-bottom: 50px;
+        &--inputgroup{
+            align-items: flex-end;
+            &--line{
+        width: 4px;
+        height: 60px;
+        background-color: $scndryGrey;
+            }
+            &--sign{
+                transform: translateY(10px);
+                margin-right: 5px;
+            }
+            &--input{
+                font-family: "Outfit", sans-serif;
+                font-size: 35px;
+                color: $black;
+               width: 200px;
+                outline: 0 !important;
+                border:none !important;
+                display: block;
+                padding-top: 20px;
+                background: none;
+                transform: translateY(5px);
+                padding-left: 10px;
+                &::placeholder{
+                    font-family: "Outfit", sans-serif;
+                    font-size: 55px;
+                    color: $scndryGrey;
+                    
+                }
+            }
+        }
+    }
+}
