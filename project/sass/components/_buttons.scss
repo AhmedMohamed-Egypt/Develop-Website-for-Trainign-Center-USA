@@ -28,8 +28,25 @@
     font-family: "DM Sans", sans-serif;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
     &.getstarted{
         padding: 16px 46px;
+    }
+    &.startSaving{
+        border-radius: 30px;
+border: 1px solid $lightGreen;
+
+background: $lightergreen;
+color: $green;
+font-family: "Outfit", sans-serif;
+padding: 17px 37px;
+&:hover{
+    transform: scale(1.01);
+    background-color: $green;
+    color: $white;
+    border: 1px solid transparent;
+}
     }
 }
 
