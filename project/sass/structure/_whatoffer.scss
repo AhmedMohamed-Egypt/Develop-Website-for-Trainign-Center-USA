@@ -13,6 +13,8 @@
         position: relative;
         margin-top: 150px;
         max-width: 100%;
+        transform: translateX(150px);
+        max-width: 100%;
         &::after{
             @include after();
             background-color: $bage;
@@ -22,6 +24,7 @@
 
         }
         >div.dashboardCard {
+            
             &:not(:last-child){
                 margin-bottom: 20px;
             }
@@ -43,10 +46,10 @@
         height: 350px;
         margin: auto;
         max-width: 100%;
-        transform: translate(-150px,30px);
+        transform: translate(0px,30px);
     }
     &__content{
-        transform: translateX(150px);
+       
     }
 
 }

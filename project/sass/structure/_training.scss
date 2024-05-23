@@ -15,6 +15,12 @@
     &__rightside{
         transform: translateX(-120px);
     }
+    &__leftside{
+       width: 60%;
+       img{
+        width: 100%;
+       }
+    }
     &__content{
         
     }
