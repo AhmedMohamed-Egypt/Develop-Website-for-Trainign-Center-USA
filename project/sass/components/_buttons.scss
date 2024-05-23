@@ -48,6 +48,14 @@ padding: 17px 37px;
     border: 1px solid transparent;
 }
     }
+    &.hoverContact{
+        &:hover{
+            background-color: $white;
+            color: $green;
+            
+        }
+       
+    }
 }
 
 
