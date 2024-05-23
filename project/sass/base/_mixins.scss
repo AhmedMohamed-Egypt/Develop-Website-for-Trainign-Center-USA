@@ -19,24 +19,24 @@
   }
 }
 /*padding */
-@for $i from 1 through 60 {
+@for $i from 1 through 80 {
   .pdt-#{$i} {
-    padding-top: $i + px;
+    padding-top: $i + px !important;
   }
 }
-@for $i from 1 through 60 {
+@for $i from 1 through 80 {
   .pdb-#{$i} {
-    padding-bottom: $i + px;
+    padding-bottom: $i + px !important;
   }
 }
-@for $i from 1 through 60 {
+@for $i from 1 through 80 {
   .pdl-#{$i} {
-    padding-left: $i + px;
+    padding-left: $i + px !important;
   }
 }
-@for $i from 1 through 60 {
+@for $i from 1 through 80 {
   .pdr-#{$i} {
-    padding-right: $i + px;
+    padding-right: $i + px !important;
   }
 }
 @for $i from 1 through 50 {

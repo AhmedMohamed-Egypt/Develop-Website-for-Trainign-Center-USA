@@ -3,6 +3,8 @@ div(class="whatOffer pdt-80")
  .container-page
   div(class="d-flex  flex-column align-items-center")
    p(class="label mrb-20") features
-   h2(class="h2Heading") What We <span class="weight-bold pink">Offer</span>
+   h2(class="h2Heading") What We <span class="weight-600 pink">Offer</span>
    p(class="whatOffer__subHeading text-center mtop-25 font-dmsans lightblue weight-400 size-18") With plenty of training creation features to choose from, you can customize your current content audio,  slides and scripts files. Upload your video content or create virual training from within!
-   include ./../components/WhatOfferDashboard.pug
+   div(class="d-flex whatOffer__content")
+    include ./../components/WhatOfferDashboard.pug
+    span(class="whatOffer__inventory  d-block")

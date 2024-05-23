@@ -1,0 +1,21 @@
+.training{
+    background-color: $grey;
+
+    &__heading{
+        line-height: 1.2;
+        font-size: 48px;
+        max-width: 500px;
+    }
+    &__subtxt{
+        max-width: 550px;
+        &--span{
+            line-height: 1.5;
+        }
+    }
+    &__rightside{
+        transform: translateX(-120px);
+    }
+    &__content{
+        transform: translateX(120px);
+    }
+}

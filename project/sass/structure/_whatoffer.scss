@@ -1,4 +1,5 @@
 .whatOffer {
+    padding-bottom: 120px;
     &__subHeading{
         max-width: 850px;
         line-height: 1.6;
@@ -31,19 +32,21 @@
                 filter: none;
             }
         }
-        &--inventory {
-            background-color: $lightGreen;
-         
-            border-radius: 24px;
-            width: 470px;
-            height: 350px;
-            position: absolute;
-            top: -100px;
-            right: -330px;
-            bottom: 0;
-            margin: auto;
-            max-width: 100%;
-        }
+   
+      
+    }
+    &__inventory {
+        background-color: $lightGreen;
+     
+        border-radius: 24px;
+        width: 470px;
+        height: 350px;
+        margin: auto;
+        max-width: 100%;
+        transform: translate(-150px,30px);
+    }
+    &__content{
+        transform: translateX(150px);
     }
 
 }
