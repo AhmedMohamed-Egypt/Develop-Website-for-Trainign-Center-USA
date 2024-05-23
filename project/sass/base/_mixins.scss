@@ -1,6 +1,6 @@
 @for $i from 1 through 60 {
   .mtop-#{$i} {
-    margin-top: $i + px;
+    margin-top: $i + px !important;
   }
 }
 @for $i from 1 through 60 {

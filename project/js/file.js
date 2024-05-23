@@ -7,3 +7,30 @@ function translateElemnts(){
     })
 }
 translateElemnts()
+
+const swiper = new Swiper(".testmonial__swiper .swiper", {
+    // Default parameters
+    slidesPerView: 3,
+    spaceBetween: 5,
+    speed: 500,
+  
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+       
+      },
+      // when window width is >= 480px
+      480: {
+       
+      },
+      // when window width is >= 640px
+      640: {
+        
+      },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
