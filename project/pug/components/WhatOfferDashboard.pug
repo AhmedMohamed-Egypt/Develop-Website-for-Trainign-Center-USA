@@ -1,0 +1,15 @@
+- var content = [{icon:"icon-Group",title:"Inventory Management",text:"Bring your training to life by assigning and tracking the items your teams will be using for their upcoming events"},{icon:"icon-staff",title:"Staff Management",text:"Store important staff information including images, certifications, uniform sizes, contact information, and much more"},{icon:"icon-courses",title:"Additional Courses",text:"Our Essentials Courses give your team in-depth knowledge of your industry by offering them courses and certifications on brand"}]
+mixin dashboard 
+ 
+  each val in content 
+   div(class="dashboardCard d-flex align-items-center")
+    span(class=`${val.icon} d-block mrt-20`)
+    div 
+     h2(class="drkBlue font-doyHon weight-400 size-25 mrb-5")=val.title
+     p(class="dashboardCard__txt drkBlue font-dmsans weight-400 size-16 lightblue")=val.text
+
+.whatOffer__dashboard
+ +dashboard
+ span(class="whatOffer__dashboard--inventory  d-block")
+ 
+ 
