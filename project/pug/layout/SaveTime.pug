@@ -1,19 +1,24 @@
 .saveTime 
  .container-page 
   div(class="saveTime__container d-flex flex-column align-items-center")
-   p(class="label mrb-15")  Calculator  
+   
    h2(class="h2Heading") <span class="pink weight-600">Save</span> Time &amp; Money 
    p(class="lightblue font-dmsans size-18 weight-400 text-center mrb-30") Find out how much you can save with Dewdroppers.
    .saveTime__estimate
-    form.saveTime__estimate--form
-     p(class="drkBlue weight-400 size-25 font-dmsans text-center mrb-10 ") Your Estimated Yearly Savings
-     div(class="d-flex saveTime__estimate--inputgroup justify-content-center")
-      span(class="drkBlue weight-400 size-55 font-outfit d-block saveTime__estimate--inputgroup--sign") $
-      span(class=" d-block weight-200 size-55 saveTime__estimate--inputgroup--line") 
+    div(class="position-relative")
+     form.saveTime__estimate--form
+      p(class="drkBlue weight-400 size-25 font-dmsans text-center mrb-10 ") Your Estimated Yearly Savings
+      div(class="d-flex saveTime__estimate--inputgroup justify-content-center")
+       span(class="drkBlue weight-400 size-55 font-outfit d-block saveTime__estimate--inputgroup--sign") $
+       span(class=" d-block weight-200 size-55 saveTime__estimate--inputgroup--line") 
      
-      input(type="text" class="border-none saveTime__estimate--inputgroup--input" placeholder="00000")
-     button(class="customBtn startSaving") Start Saving
-    .saveTime__estimate--bkgroundBlue
+       input(type="text" class="border-none saveTime__estimate--inputgroup--input" placeholder="00000")
+       button(class="customBtn startSaving") Start Saving
+     .saveTime__estimate--bkgroundBlue
+    form(class="saveTime__estimate--formTwo mtop-50")
+     include ./../components/formInput.pug
+     button(type="submit" class="customBtn w-100 mtop-20") Contact For A Yearly Savings Estimate
+      
 
     
   

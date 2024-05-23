@@ -1,0 +1,9 @@
+- var contents = [{icon:"icon-fluent_live-20-filled",label:"Live Trainign",placeholder:02},{icon:"icon-healthicons_i-training-class-outline",label:"Dewdroppers Training ",placeholder:02},{icon:"icon-solar_dollar-linear",label:"Staff Rate ",placeholder:02},{icon:"icon-threeDots",label:"Number of Staff *",placeholder:02},{icon:"icon-threeDots",label:"No. of Compaigns",placeholder:02},{icon:"icon-fluent_live-20-filled",label:"Dewdroppers Plan ",placeholder:02}]
+
+  
+ each val in contents 
+  div.saveTime__estimate--formTwo--inputGroup
+   label(class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label")=val.label 
+   span(class=`${val.icon} size-25`)
+   input(type="text" placeholder=`0${val.placeholder}` class="saveTime__estimate--formTwo--inputGroup--input")
+   
