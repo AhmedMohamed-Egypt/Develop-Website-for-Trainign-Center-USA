@@ -2,3 +2,38 @@
     height: 100vh;
     background-color: $grey;
 }
+.herocontent{
+    width: 87%;
+    margin-left: auto;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 200px;
+    &__h1{
+        width: 710px;
+        line-height: 1;
+    }
+    &__leftside{
+        &--text{
+            line-height: 1.7;
+            width: 620px;
+        }
+        &--managers{
+            &--imgs{
+                img{
+                    border: 5px solid $grey;
+                    &:not(:first-child){
+                    
+                    }
+                }
+            }
+            &--txt{
+                width: 300px;
+            }
+        }
+
+    }
+    &__rightside{
+       transform: translate(40px, -30px);
+    }
+
+}
