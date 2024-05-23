@@ -1,9 +1,36 @@
+- var listOne = ["Improved Performance","Increased Productivity","Staff Retention","Enhanced Company Reputation","Risk Mitigation"]  
+- var listTwo = ["Client Satisfaction"," Money Saved ","Time Reclaimed","Enhanced Event Execution","Management Team Assurance"]  
+
+
 .GetQoute 
- .container-page 
+ .container-page
   h2(class="h2Heading size-80 GetQoute__mainHeading")
    p(class="black-5") Invest In Your <span class="pink weight-600">Team</span>
    p(class="black-5") Invest In Your <span class="pink weight-600">Events</span>
-  p(class="font-dmsans size-16 green-6 weight-400 ")
+  p(class="font-dmsans size-16 green-6 weight-400 mtop-20 mrb-20")
    span(class="d-block") Not sure we're right for you? Here are our top 10 reasons why you
    span(class="d-block") should invest in company training :
-   
+  div(class="d-flex mrb-50")
+   ul 
+    each val in listOne 
+     li(class="green-6 font-dmsans size-16 weight-500 mrb-10")= val
+   ul(class="mrl-50")
+    each val in listTwo 
+     li(class="green-6 font-dmsans size-16 weight-500 mrb-10")= val
+  a(href="#" class="customBtn getQoute") Get A Qoute !
+ img(src="images/footer-iphone.png" class="GetQoute__floatImg")
+.bottomFooter
+ .container-page
+  div(class="bottomFooter__container")
+   ul(class="d-flex justify-content-between")
+    li() 
+     a(href="#" class="white font-dmsans") Terms and Conditions  
+    li()
+     a(href="#" class="white font-dmsans") Privacy Policy  
+    li()
+     a(href="#" class="white font-dmsans") Cookie Policy
+    li(class="white font-dmsans") Copyright &copy; 2024 Dewdroppers. All rights reserved.
+  
+ 
+ 
+                                                                                                

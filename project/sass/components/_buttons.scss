@@ -30,6 +30,11 @@
     font-weight: bold;
     cursor: pointer;
     transition: .5s;
+    &.getQoute{
+        border: 2px solid $green;
+        background-color: transparent;
+        color: $green;
+    }
     &.getstarted{
         padding: 16px 46px;
     }
