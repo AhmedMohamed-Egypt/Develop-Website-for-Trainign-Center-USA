@@ -8,12 +8,30 @@
         padding: 60px 0;
     }
     &__estimate{
-        background-color: $white;
-        padding: 10px 25px;
-        border-radius: 24px;
-        padding: 30px 80px;
-        padding-bottom: 50px;
-        position: relative;
+     position: relative;
+        &--form{
+            background-color: $white;
+            padding: 10px 25px;
+            border-radius: 24px;
+            padding: 30px 80px;
+            padding-bottom: 50px;
+            position: relative;
+            z-index: 99;
+        }
+        &--bkgroundBlue{
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            height: 40px;
+            width: 90%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: $lighterBlue;
+            filter: blur(23.149999618530273px);
+            border-radius: 70px;
+        }
+      
         &--inputgroup{
             align-items: flex-end;
             &--line{
@@ -55,4 +73,5 @@
             bottom: -30px;
         }
     }
+   
 }
