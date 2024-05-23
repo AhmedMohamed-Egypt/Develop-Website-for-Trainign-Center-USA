@@ -18,8 +18,8 @@ mixin testmonialCard(txt,name,title,position)
   div(class="testmonial__swiper mtop-50")
    .swiper
     .swiper-wrapper
-     each val in content 
-      .swiper-slide 
+     each val,index in content 
+      div(class=`swiper-slide`)
        +testmonialCard(val.text,val.name,val.title,val.position)
   .pagination.position-relative
     .swiper-button-prev
