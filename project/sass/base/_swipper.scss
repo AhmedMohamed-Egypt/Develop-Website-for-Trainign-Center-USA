@@ -16,6 +16,9 @@
 }
 .testmonial{
     position: relative;
+    .swiper {
+        padding-bottom: 50px;
+    }
     .swiper-button-lock{
         display: block !important;
        }
@@ -41,14 +44,34 @@
         left: 0;
         right: 0;
         margin: auto;
-        top: 50%;
+        top: 40%;
         bottom: 0;
+        max-width: 95%;
        }
        .swiper-wrapper{
+        .swiper-slide{
+            &.activeName {
+                .testmonialCard{
+                    
+                    &__txt{
+                        width: 79%;
+                        margin: auto;
+                    }
+                }
+            }
+        }
         .swiper-slide-active+.swiper-slide-next{
             .testmonialCard{
                 border: none;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+                &__txt{
+                  
+                    margin: auto;
+                }
             }
         }
        }
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    opacity: .65;
 }

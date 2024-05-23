@@ -19,7 +19,7 @@ mixin testmonialCard(txt,name,title,position)
    .swiper
     .swiper-wrapper
      each val,index in content 
-      div(class=`swiper-slide`)
+      div(class=`swiper-slide ${val.name==="Michelle Fariabi"?"activeName":""}`)
        +testmonialCard(val.text,val.name,val.title,val.position)
   .pagination.position-relative
     .swiper-button-prev
