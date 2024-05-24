@@ -1,4 +1,6 @@
 
+
+
 @include max(1300px){
     .herocontent {
         width: 95%;
@@ -7,6 +9,22 @@
         max-width: 95%;
     }
 }
+@include max(1200px){
+    .whatOffer__content{
+        flex-direction: column;
+    }
+    .whatOffer__inventory{
+        transform: none;
+        margin-top: 25px;
+    }
+    .GetQoute__floatImg{
+        width: 350px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
 
 @include min(1200px){
     .whatOffer__inventory {
