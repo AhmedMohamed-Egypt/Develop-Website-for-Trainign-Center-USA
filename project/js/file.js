@@ -18,10 +18,10 @@ const swiper = new Swiper(".testmonial__swiper .swiper", {
     breakpoints: {
       // when window width is >= 320px
       320: {
-       
+        slidesPerView: 1,
       },
       // when window width is >= 480px
-      769: {
+      767: {
         slidesPerView: 2,
       },
       // when window width is >= 640px
@@ -51,3 +51,18 @@ function scrollingNavBar(scrolling) {
 window.onscroll =()=>{
   scrollingNavBar(window.scrollY)
 }
+
+function clickHamburg(){
+  const hamBurgBtn = document.querySelector(".habmurgMenu")
+  let show = false
+  hamBurgBtn.addEventListener('click',()=>{
+    if(!show){
+      document.body.classList.add('sliding')
+      show = true
+    }else {
+      document.body.classList.remove('sliding')
+      show = false
+    }
+  })
+}
+clickHamburg()

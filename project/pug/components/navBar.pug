@@ -1,17 +1,20 @@
-- var list = ["Home","About","Features","Pricing"]
+- var list = [{title:"Home",id:"#"},{title:"About",id:"#"},{title:"Features",id:"#feature"},{title:"Pricing",id:"#pricing"},{title:"Sign in",id:"#"},{title:"Sign Up",id:"#"}]
+
 
 
 .container__navbarDew 
  div(class="navbarDew d-flex align-items-center justify-content-between ") 
   a(href="#" class="d-block ")
    img(src="images/logo.png")
-  ul(class="navList d-flex align-items-center ") 
-   - for(let i =  0 ; i < list.length;i++)
-    li
-     a(href="#" class=`${i==0?"active":""}  font-dmsans weight-500 size-16 drkBlue`)=list[i]
-  .logAccount 
-   button(class="login green weight-bold size-16 mrt-20") Sign in 
-   button(class=" weight-bold size-16 radius-28  customBtn") Sign Up
+  ul(class="navList d-flex align-items-center w-100") 
+   each val,i in list
+    li(class=`${i==0?"margin-left-auto":""} ${i==3?"margin-right-auto":""}`)
+     a(href=`${val.id}` class=`${i==0?"active":""} ${i==4?"login green weight-bold size-16 mrt-20":""} ${i==5?"weight-bold size-16 radius-28  customBtn":""}  font-dmsans weight-500 size-16 drkBlue`)=val.title
+  .habmurgMenu 
+   span 
+   span 
+   span
+
 
 
       

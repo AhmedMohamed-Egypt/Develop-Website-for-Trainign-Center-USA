@@ -27,6 +27,9 @@ margin: auto;
   width: 1250px;
   margin: auto;
   max-width: 85%;
+  @include max(769px){
+    max-width: 90%;
+  }
 }
 @keyframes slideUp {
 
