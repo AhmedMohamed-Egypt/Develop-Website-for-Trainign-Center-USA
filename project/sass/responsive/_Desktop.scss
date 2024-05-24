@@ -1,0 +1,29 @@
+
+
+
+@include min(1280px){
+    .GetQoute__floatImg{
+        width: 43%;
+        position: absolute;
+        right: 1%;
+        top: 170px;
+        width: 550px;
+    }
+    .whatOffer__inventory{
+     width: 400px;
+    }
+}
+@include min(1500px){
+    .GetQoute__floatImg{
+    
+        right: 0%;
+        top: 100px;
+        width: 50%;
+    }
+}
+@include min(1700px){
+    .GetQoute__floatImg{
+width: 800px;
+       
+    }
+}
