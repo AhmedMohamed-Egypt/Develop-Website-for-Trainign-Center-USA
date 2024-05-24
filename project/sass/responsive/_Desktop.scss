@@ -33,9 +33,12 @@
     .herocontent{
         flex-direction: column;
         margin-top: 75px;
+        margin-left: auto;
+        margin-right: auto;
         &__leftside,&__rightside{
             width: 100%;
             text-align: center;
+            transform: none;
         }
         &__leftside{
             &--text{

@@ -21,11 +21,12 @@ const swiper = new Swiper(".testmonial__swiper .swiper", {
        
       },
       // when window width is >= 480px
-      480: {
-       
+      769: {
+        slidesPerView: 2,
       },
       // when window width is >= 640px
-      640: {
+      994: {
+        slidesPerView: 3,
         
       },
     },
@@ -34,3 +35,19 @@ const swiper = new Swiper(".testmonial__swiper .swiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+
+
+  //scrollnavbar
+
+function scrollingNavBar(scrolling) {
+  
+
+  if (scrolling > 50) {
+    document.body.classList.add("fixed");
+  } else {
+    document.body.classList.remove("fixed");
+  }
+}
+window.onscroll =()=>{
+  scrollingNavBar(window.scrollY)
+}

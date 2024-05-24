@@ -1,0 +1,49 @@
+@include max(1155px){
+    .testmonialCard__txt{
+        font-size: 14.5px;
+    }
+}
+@include max(1001px){
+    .testmonialCard__txt{
+        height: 250px;
+    }
+}
+
+@include max(994px){
+    .testmonialCard{
+     width: 90%;
+    }
+    .testmonial .swiper-wrapper .swiper-slide-active+.swiper-slide-next .testmonialCard{
+        box-shadow: rgba(0,0,0,.1) 0px 10px 20px;
+    }
+    .whatOffer__content{
+        width: 100%;
+    }
+    .whatOffer__dashboard{
+        width: 100%;
+        &::after{
+            border-radius: 0;
+        }
+        .dashboardCard{         
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .whatOffer{
+        padding-bottom: 0;
+    }
+    .whatOffer__inventory{
+        border-radius: 0;
+        margin-top: 0;
+    }
+    .bottomFooter__container{
+        ul{
+            flex-wrap: wrap;
+            li{
+                width: 30%;
+            }
+        }
+    }
+}
+
