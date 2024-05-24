@@ -116,5 +116,8 @@
   font-family: "Outfit", sans-serif;
   font-size: 65px;
   font-weight: 400;
+  @include max(992px){
+    font-size: 45px !important;
+  }
 }
 

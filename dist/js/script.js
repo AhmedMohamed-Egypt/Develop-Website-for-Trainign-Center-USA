@@ -17,11 +17,11 @@ const swiper = new Swiper(".testmonial__swiper .swiper", {
     // Responsive breakpoints
     breakpoints: {
       // when window width is >= 320px
-      320: {
-       
+      375: {
+        slidesPerView: 1,
       },
       // when window width is >= 480px
-      769: {
+      770: {
         slidesPerView: 2,
       },
       // when window width is >= 640px
