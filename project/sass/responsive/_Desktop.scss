@@ -2,11 +2,14 @@
 
 
 @include max(1300px){
+    .navbarDew{
+        width: 90%;
+    }
     .herocontent {
         width: 95%;
     }
     .container__navbarDew{
-        max-width: 95%;
+//max-width: 95%;
     }
 }
 @include max(1200px){
@@ -16,6 +19,7 @@
     .whatOffer__inventory{
         transform: none;
         margin-top: 25px;
+        width: 100%;
     }
     .GetQoute__floatImg{
         width: 350px;
@@ -23,8 +27,46 @@
         bottom: 0;
         margin: auto;
     }
+    .hero {
+        height: auto;
+    }
+    .herocontent{
+        flex-direction: column;
+        margin-top: 75px;
+        &__leftside,&__rightside{
+            width: 100%;
+            text-align: center;
+        }
+        &__leftside{
+            &--text{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &--managers--txt {
+                margin: auto;
+            }
+        }
+        &__h1{
+            width: 100%;
+        }
+    }
 }
 
+@include max(1150px){
+    .whatOffer__dashboard{
+        transform: none;
+        padding: 25px 0;
+        &::after{
+            top: 0;
+        }
+    }
+    .whatOffer__dashboard>div.dashboardCard{
+        transform: none !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 @include min(1200px){
     .whatOffer__inventory {
