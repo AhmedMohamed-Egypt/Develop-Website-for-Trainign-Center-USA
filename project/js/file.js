@@ -1,4 +1,4 @@
-const signUpBtn = document.querySelector(".signUpBtn")
+const signUpBtn = document.querySelectorAll(".signBtn")
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn")
 
 function translateElemnts(){
@@ -73,10 +73,16 @@ clickHamburg()
 //fire modal 
 
 function fireModal(btn,closeBtn,classModal){
-  btn.addEventListener('click',(e)=>{
-    e.preventDefault()
-    document.body.classList.add(classModal)
+  
+
+  btn.forEach((item)=>{
+    item.addEventListener("click",(e)=>{
+      e.preventDefault()
+      document.body.classList.add(classModal)
+    })
   })
+
+ 
   closeBtn.addEventListener('click',()=>{
     document.body.classList.remove(classModal)
   })
