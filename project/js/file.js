@@ -1,3 +1,6 @@
+const signUpBtn = document.querySelector(".signUpBtn")
+const closeBtnModal = document.querySelector(".modalSignUp__closeBtn")
+
 function translateElemnts(){
     const allImgs = document.querySelectorAll(".herocontent__leftside--managers--imgs img")
     allImgs.forEach((item,index)=>{
@@ -66,3 +69,17 @@ function clickHamburg(){
   })
 }
 clickHamburg()
+
+//fire modal 
+
+function fireModal(btn,closeBtn,classModal){
+  btn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    document.body.classList.add(classModal)
+  })
+  closeBtn.addEventListener('click',()=>{
+    document.body.classList.remove(classModal)
+  })
+}
+
+fireModal(signUpBtn,closeBtnModal,"modalOpen")

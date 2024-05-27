@@ -1,0 +1,28 @@
+- var contents = [{img:"images/icons8-facebook-48.png",text:"Continue with Facebook"},{img:"images/icons8-google-48.png",text:"Continue with Google"},{img:"images/icons8-apple-24.png",text:"Continue with Apple"}]
+mixin links(className,linkClass)
+ each val,index in contents
+  div
+   a(href="#" class=`d-flex align-items-center radius-25 ${linkClass} ${index===contents.length-1?"last-child":""}`)
+    img(src=`${val.img}` class=className)
+    span(class="font-outfit weight-400 size-16 grey-10 d-block mrl-10")=val.text    
+.modalSignUp 
+ .modalSignUp__content
+  .modalSignUp__content__container
+   p(class="font-outfitfont-outfit weight-600 size-35 text-center mrb-25") Sign In 
+   +links('modalSignUp__content--icon','modalSignUp__content--link')
+   p(class="font-outfit weight-600 grey-10 size-18 text-center mrb-20 mtop-20") OR 
+   form
+    div(class="modalSignUp__content--input mrb-15")
+     input(type="text" placeholder="Email")
+    div(class="modalSignUp__content--input")
+     input(type="password" placeholder="Password")
+    div(class="d-flex justify-content-end mtop-10 mrb-30")
+     a(href="#" class="green font-outfit weight-600 size-14") Forgot password?
+    div(class="modalSignUp__content--btnsubmit")
+     button(type="submit" class="customBtn w-100 font-manrope weight-500 pdt-18 pdb-18 hoversignIn") Sign In
+    div(class="font-outfit weight-500 size-14 d-flex justify-content-center mtop-15")
+     p(class="grey-10") Don’t a have account? 
+     a(href="#" class="green") Sign Up
+      
+  .modalSignUp__closeBtn
+   img(src="images/closeIcon.png")

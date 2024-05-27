@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap');
 
 @font-face {
   font-family: 'icomoon';
@@ -82,7 +83,7 @@
 }
 @for $i from 1 through 10{
   .weight-#{$i*100}{
-    font-weight: #{$i*100};
+    font-weight: #{$i*100} !important;
   }
 }
 .size-h1{
@@ -100,6 +101,9 @@
 }
 .font-doyHon{
   font-family: "Do Hyeon", sans-serif;
+}
+.font-manrope{
+  font-family: "Manrope", sans-serif !important;
 }
 .coloredword{
   color: $pink;

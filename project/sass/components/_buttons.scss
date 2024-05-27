@@ -30,6 +30,15 @@
     font-weight: bold;
     cursor: pointer;
     transition: .5s;
+    border: 1px solid transparent;
+    &.hoversignIn{
+        &:hover{
+            color: $green ;
+            background-color: $white !important;
+             border: 1px solid $green;
+        }
+       
+    }
     &.getQoute{
         border: 2px solid $green;
         background-color: transparent;
@@ -62,6 +71,7 @@ padding: 17px 37px;
         }
        
     }
+  
 }
 
 
