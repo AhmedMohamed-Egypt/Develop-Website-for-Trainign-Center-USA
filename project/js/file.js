@@ -79,12 +79,14 @@ function fireModal(btn,closeBtn,classModal){
     item.addEventListener("click",(e)=>{
       e.preventDefault()
       document.body.classList.add(classModal)
+     
     })
   })
 
  
   closeBtn.addEventListener('click',()=>{
     document.body.classList.remove(classModal)
+    
   })
 }
 

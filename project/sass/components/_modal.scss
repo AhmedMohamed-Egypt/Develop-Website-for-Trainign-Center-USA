@@ -1,4 +1,6 @@
 body.modalOpen {
+ 
+
   .modalSignUp {
     opacity: 1;
     z-index: 999999999999999;
@@ -13,7 +15,7 @@ body.modalOpen {
   height: 100%;
   opacity: 0;
   z-index: -1;
-  transition: 0.25s;
+  transition: 0.5s;
 
 
   &::after {
@@ -28,16 +30,18 @@ body.modalOpen {
     position: absolute;
     @include cntrElmnt();
     z-index: 999;
-    padding: 50px 60px;
+    padding: 50px 0px;
+    width: 500px;
+    max-width: 100%;
    // padding-top: 50px;
    @include max(500px){
     max-width: 90%;
-    height: 90%;
     overflow-y: scroll;
+   
     padding: 50px 20px;
    }
    @include max(400px){
-   
+    
     height: 90%;
     
    }
