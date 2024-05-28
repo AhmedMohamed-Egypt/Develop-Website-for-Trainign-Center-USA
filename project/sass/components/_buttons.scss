@@ -65,7 +65,7 @@ padding: 17px 37px;
     }
     &.hoverContact{
         &:hover{
-            background-color: $white;
+            background-color: $white !important;
             color: $green;
             
         }
