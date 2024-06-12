@@ -102,13 +102,14 @@ fireModal(signUpBtn, closeBtnModal, "modalOpen");
 function activateClassNavBar() {
   const allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
   const pathName = window.location.pathname.slice(1)
+  
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
-    
-    item.getAttribute("href")===pathName
+    if(index!==0){
+      item.getAttribute("href")===pathName
       ? item.classList.add("activelink")
       : item.classList.remove('activelink')
-   
+    }
   });
   if(window.location.pathname==="/"){
     document.body.classList.add('home')
