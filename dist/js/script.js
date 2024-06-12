@@ -101,15 +101,20 @@ fireModal(signUpBtn, closeBtnModal, "modalOpen");
 
 function activateClassNavBar() {
   const allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
-  const pathName = window.location.pathname.slice(1)
+
+  const pathName = window.location.pathname
   
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
+    const pureAttribute = item.getAttribute('href').slice(0,item.getAttribute('href').indexOf('.')).toLowerCase()
+    const purePathName = pathName.slice(1,window.location.pathname.indexOf('.')).toLowerCase()
+    
     if(index!==0){
-      item.getAttribute("href")===pathName
+      pureAttribute===purePathName
       ? item.classList.add("activelink")
       : item.classList.remove('activelink')
     }
+   
   });
   if(window.location.pathname==="/"){
     document.body.classList.add('home')
