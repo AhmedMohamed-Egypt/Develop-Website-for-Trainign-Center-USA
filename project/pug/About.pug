@@ -1,0 +1,22 @@
+- var txts = ['Dewdroppers was created in 2024 with the vision of creating exceptional staff training and events while giving hard working directors and managers their time back. Founded by a decades-long field marketer and agency owner that experienced too many downfalls of in-person, live and virtual training, she decided to create something better for the industry. Something that benefited not just her, but her staff. Her colleagues. Her clients. Something simple to use and cost effective for teams of all sizes. Something that sparks creativity and gives options to embrace every individual’s best way of learning.','Being a Dewdropper is about working smarter, not harder. We want you to get those extra few hours back during the week so you’re able to share more laughs with your family, enjoy late nights with your friends, and simply take a deep breath to enjoy the moment.','We are proud to offer a training and inventory management platform that will increase the quality of your work and lives. If you’re not convinced that can be done, we’re happy to walk you through our “20+ Reasons Why You Should Be A Dewdropper.']
+mixin text(classDiv)
+ div(class=classDiv)
+  each val in txts 
+   p(class="lightblue size-16 font-dmsans mrb-25 txtLHeight")= val
+include ./strucuture/head.pug
+ div(class="aboutPage mtop-50")
+  include ./components/navBar.pug
+  div(class="")
+   .container-generic
+    div(class="d-flex align-items-center aboutPage__sectionOne mtop-150")
+     div(class="aboutPage__sectionOne--leftside")
+      p(class="label") about 
+      h2(class="h2Heading mrb-10 mtop-10") <span class="weight-300">our</span> <span class="weight-600 pink">journey</span>
+      +text("aboutPage__sectionOne--leftside--txt")
+     div(class="aboutPage__sectionOne--rightside")
+      img(src="./images/about-img.png")
+      div(class="font-outfit text-center") 
+       h3(class="size-30 weight-400") Katie Woelfel
+       h5(class="size-16 weight-400") Founding Dewdropper
+ include ./components/Modal.pug
+script(src="js/script.js")

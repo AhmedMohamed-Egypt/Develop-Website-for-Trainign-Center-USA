@@ -1,3 +1,9 @@
+body.home{
+    .navList li:nth-child(1)>a{
+        color: $blue;
+    }
+}
+
 .navbarDew{
     width: 75%;
     margin: auto;
@@ -45,8 +51,12 @@
         overflow: hidden;
     }
    li{
+ 
     >a{
-        &.active{
+        &.activelink {
+            color: $blue;
+        }
+        &.active {
             color: $blue;
         }
         transition: .5s;

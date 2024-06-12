@@ -23,6 +23,14 @@ max-width: 75%;
 margin: auto;
 */
 }
+.container-generic{
+  width: 75%;
+  margin: auto;
+  @include max(992px){
+    width: 90%;
+  }
+}
+
 .container-page{
   width: 1250px;
   margin: auto;
