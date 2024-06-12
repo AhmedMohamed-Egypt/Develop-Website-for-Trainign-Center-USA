@@ -106,7 +106,7 @@ function activateClassNavBar() {
   
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
-    const pureAttribute = item.getAttribute('href').slice(0,item.getAttribute('href').indexOf('.')).toLowerCase()
+    const pureAttribute = item.getAttribute('href').slice(1).toLowerCase()
     const purePathName = pathName.slice(1).toLowerCase()
     console.log(pureAttribute.trim(),purePathName.trim())
     if(index!==0){
