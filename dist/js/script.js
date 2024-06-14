@@ -165,8 +165,17 @@ swiperPricingPage();
 //toggle Button 
 
 function toggleBtns(){
+  const fixedPrice = [30,60,130,200]
   const toggleBtns = document.querySelectorAll(".pricingPage__container--toggleBtns button")
   const subscription = document.querySelector(".pricingPage__container--subscription")
+  const allPrices = document.querySelectorAll('.cardpricing__price--value')
+  function fillPrices(prices){
+    allPrices.forEach((item,index)=>{
+      item.textContent = prices[index]
+    })
+  }
+  fillPrices(fixedPrice)
+
  toggleBtns.forEach((item,index)=>{
   if(item){
     item.addEventListener('click',()=>{
@@ -176,8 +185,15 @@ function toggleBtns(){
       item.classList.add('active')
       if(index===1){
         subscription.classList.add('animate__animated','animate__bounce')
+   
       }else {
         subscription.classList.remove('animate__animated','animate__bounce')
+      }
+      if(index===1){
+        const applyDiscount =  fixedPrice.map((item)=>(item-(item*.2)))
+        fillPrices(applyDiscount)
+      }else {
+        fillPrices(fixedPrice)
       }
     })
   }
@@ -185,3 +201,4 @@ function toggleBtns(){
  })
 }
 toggleBtns()
+
