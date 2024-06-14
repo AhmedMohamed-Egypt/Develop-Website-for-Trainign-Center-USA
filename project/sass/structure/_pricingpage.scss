@@ -9,13 +9,34 @@
             button{
                 width: 50%;
                 cursor: pointer;
+                position: relative;
+                &::after{
+                    @include after();
+                    border-radius: 20px;
+                    z-index: -1;
+                    width: 0;
+                    transition: .5s;
+                }
                 &.active{
-                    background-color: $green;
+                    
                     color: $white;
                     border-radius: 20px;
                     padding: 5px 0;
+                    &::after{
+                        background-color: $green;
+                        width: 100%;
+
+
+                    }
                 }
             }
+        }
+        &--subscription{
+         opacity: 0;
+         transition: .5s;
+         &.animate__animated{
+            opacity: 1;
+         }
         }
     }
     &__swiper{

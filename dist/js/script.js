@@ -166,6 +166,7 @@ swiperPricingPage();
 
 function toggleBtns(){
   const toggleBtns = document.querySelectorAll(".pricingPage__container--toggleBtns button")
+  const subscription = document.querySelector(".pricingPage__container--subscription")
  toggleBtns.forEach((item,index)=>{
   if(item){
     item.addEventListener('click',()=>{
@@ -173,8 +174,14 @@ function toggleBtns(){
         toggleBtns[i].classList.remove('active')
       }
       item.classList.add('active')
+      if(index===1){
+        subscription.classList.add('animate__animated','animate__bounce')
+      }else {
+        subscription.classList.remove('animate__animated','animate__bounce')
+      }
     })
   }
+ 
  })
 }
 toggleBtns()
