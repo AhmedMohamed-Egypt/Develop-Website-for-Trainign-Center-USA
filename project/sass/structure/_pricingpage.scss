@@ -1,0 +1,28 @@
+.pricingPage{
+    &__container{
+        &--toggleBtns{
+            border: 1px solid $lightPink;
+            border-radius: 80px;
+            width: 262px;
+            margin: auto;
+            padding: 3px 5px;
+            button{
+                width: 50%;
+                cursor: pointer;
+                &.active{
+                    background-color: $green;
+                    color: $white;
+                    border-radius: 20px;
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+    &__swiper{
+        width: 1600px;
+        max-width: 90%;
+        margin: auto;
+        padding-bottom: 50px;
+    
+    }
+}

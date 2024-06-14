@@ -31,6 +31,24 @@
     cursor: pointer;
     transition: .5s;
     border: 1px solid transparent;
+    &.choosePlan{
+        background-color: $white !important;
+        color: $green ;
+        border: 2px solid $green;
+        padding: 15px 30px;
+        &:hover{
+            background-color: $green;
+            color: $white !important;
+        }
+    }
+
+    &.signBtn{
+        &:hover{
+           // color: $white !important;
+            border: 1px solid $green ;
+            background-color: $white !important;
+        }
+    }
     &.hoversignIn{
         &:hover{
             color: $green ;

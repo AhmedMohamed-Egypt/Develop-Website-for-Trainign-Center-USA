@@ -1,0 +1,68 @@
+.cardpricing{
+    border: 1.5px solid $scndryBlack;
+    background-color: $grey;
+    padding: 0px 15px;
+    width: 90%;
+    margin: auto;
+ //   padding-bottom: 30px;
+    position: relative;
+    height: 650px;
+    &.promote{
+        background-color: $white;
+        border-color: $pink;
+        .cardpricing__title,.cardpricing__price{
+            color: $pink;
+            font-weight: 800 !important;
+            border-color: $pink;
+        }
+        .cardpricing__price{
+            font-weight: 700 !important;
+        }
+        .choosePlan{
+            background-color: $green;
+            color: $white !important;
+        }
+        &::after{
+            @include after();
+            background-color: $pink;
+            border-radius: 12px;
+            z-index: -1;
+            transform: translate(10px,10px);
+        }
+      
+    }
+    &__title{
+width: 100%;
+text-align: center;
+border-bottom: 1.5px solid $scndryBlack;
+padding-bottom: 20px;
+padding-top: 20px;
+margin-bottom: 15px;
+    }
+    &__price{
+        &--sign{
+            transform: translate(0px, -23px);
+        }
+    }
+    &__list{
+        margin-bottom: 60px;
+        margin-top: 20px;
+        &--dot{
+            display: inline-block;
+            min-width:  5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $deepgreen;
+        }
+    }
+    .choosePlan{
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+        width: 175px;
+
+    }
+}

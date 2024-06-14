@@ -1,0 +1,28 @@
+include ./strucuture/head.pug
+ div(class="pricingPage mtop-50")
+  include ./components/navBar.pug
+  div(class="pricingPage__container pdt-50")
+   div(class="text-center")
+    h2(class="h2Heading shrinkLh-1")
+     p <span class="pink weight-700">Plans</span> for every team size.
+     p Prices for <span class="pink weight-700">every budget.</span>
+   div(class="pricingPage__container--toggleBtns d-flex justify-content-center mtop-50")
+     button(class="font-popinos grey-11 weight-400 size-16 active") 6 Month
+     button(class="font-popinos grey-11 weight-400 size-16") 1 Year
+   p(class="text-center mtop-25 mrb-25 font-popinos pink weight-400 size-18") 20% off on a 1 year subscription
+   div(class="pricingPage__swiper")
+    include ./components/CardPricing.pug
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+script(src="js/script.js")

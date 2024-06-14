@@ -1,6 +1,6 @@
 body.home{
     .navList li:nth-child(1)>a{
-        color: $blue;
+        color: $green;
     }
 }
 
@@ -54,14 +54,14 @@ body.home{
  
     >a{
         &.activelink {
-            color: $blue;
+            color: $green;
         }
         &.active {
-            color: $blue;
+          //  color: $blue;
         }
         transition: .5s;
         &:hover{
-            color: $blue;
+            color: $green;
         }
     }
     &:not(:last-child){

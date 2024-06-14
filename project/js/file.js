@@ -109,7 +109,7 @@ function activateClassNavBar() {
     const pureAttribute = item.getAttribute('href').slice(1).toLowerCase()
     const purePathName = pathName.slice(1).toLowerCase()
     console.log(pureAttribute.trim(),purePathName.trim())
-    if(index!==0){
+    if(index<4){
       pureAttribute===purePathName
       ? item.classList.add("activelink")
       : item.classList.remove('activelink')
@@ -125,3 +125,56 @@ function activateClassNavBar() {
 }
 
 activateClassNavBar();
+//swiper pricing page 
+
+function swiperPricingPage() {
+  const swiperPricing = document.querySelector(
+    ".pricingPage__swiper .swiper"
+  );
+  if (swiperPricing) {
+    const swiper = new Swiper(".pricingPage__swiper .swiper", {
+      // Default parameters
+      slidesPerView: 3,
+      spaceBetween: 5,
+      speed: 500,
+
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 480px
+        767: {
+          slidesPerView: 2,
+        },
+        // when window width is >= 640px
+        1200: {
+          slidesPerView: 4,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+}
+swiperPricingPage();
+
+//toggle Button 
+
+function toggleBtns(){
+  const toggleBtns = document.querySelectorAll(".pricingPage__container--toggleBtns button")
+ toggleBtns.forEach((item,index)=>{
+  if(item){
+    item.addEventListener('click',()=>{
+      for(let i = 0 ; i < toggleBtns.length;i++){
+        toggleBtns[i].classList.remove('active')
+      }
+      item.classList.add('active')
+    })
+  }
+ })
+}
+toggleBtns()
