@@ -102,35 +102,31 @@ fireModal(signUpBtn, closeBtnModal, "modalOpen");
 function activateClassNavBar() {
   const allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
 
-  const pathName = window.location.pathname
-  
+  const pathName = window.location.pathname;
+
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
-    const pureAttribute = item.getAttribute('href').slice(1).toLowerCase()
-    const purePathName = pathName.slice(1).toLowerCase()
-    console.log(pureAttribute.trim(),purePathName.trim())
-    if(index<4){
-      pureAttribute===purePathName
-      ? item.classList.add("activelink")
-      : item.classList.remove('activelink')
+    const pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
+    const purePathName = pathName.slice(1).toLowerCase();
+    console.log(pureAttribute.trim(), purePathName.trim());
+    if (index < 4) {
+      pureAttribute === purePathName
+        ? item.classList.add("activelink")
+        : item.classList.remove("activelink");
     }
-   
   });
-  if(window.location.pathname==="/"){
-    document.body.classList.add('home')
-  }else {
-    document.body.classList.remove('home')
+  if (window.location.pathname === "/") {
+    document.body.classList.add("home");
+  } else {
+    document.body.classList.remove("home");
   }
-  
 }
 
 activateClassNavBar();
-//swiper pricing page 
+//swiper pricing page
 
 function swiperPricingPage() {
-  const swiperPricing = document.querySelector(
-    ".pricingPage__swiper .swiper"
-  );
+  const swiperPricing = document.querySelector(".pricingPage__swiper .swiper");
   if (swiperPricing) {
     const swiper = new Swiper(".pricingPage__swiper .swiper", {
       // Default parameters
@@ -162,43 +158,60 @@ function swiperPricingPage() {
 }
 swiperPricingPage();
 
-//toggle Button 
+//toggle Button
 
-function toggleBtns(){
-  const fixedPrice = [30,60,130,200]
-  const toggleBtns = document.querySelectorAll(".pricingPage__container--toggleBtns button")
-  const subscription = document.querySelector(".pricingPage__container--subscription")
-  const allPrices = document.querySelectorAll('.cardpricing__price--value')
-  function fillPrices(prices){
-    allPrices.forEach((item,index)=>{
-      item.textContent = prices[index]
-    })
+function toggleBtns() {
+  const fixedPrice = [30, 60, 130, 200];
+  const toggleBtns = document.querySelectorAll(
+    ".pricingPage__container--toggleBtns button"
+  );
+  const subscription = document.querySelector(
+    ".pricingPage__container--subscription"
+  );
+  const allPrices = document.querySelectorAll(".cardpricing__price--value");
+  function fillPrices(prices) {
+    allPrices.forEach((item, index) => {
+      item.textContent = prices[index];
+    });
   }
-  fillPrices(fixedPrice)
+  fillPrices(fixedPrice);
 
- toggleBtns.forEach((item,index)=>{
-  if(item){
-    item.addEventListener('click',()=>{
-      for(let i = 0 ; i < toggleBtns.length;i++){
-        toggleBtns[i].classList.remove('active')
-      }
-      item.classList.add('active')
-      if(index===1){
-        subscription.classList.add('animate__animated','animate__bounce')
-   
-      }else {
-        subscription.classList.remove('animate__animated','animate__bounce')
-      }
-      if(index===1){
-        const applyDiscount =  fixedPrice.map((item)=>(item-(item*.2)))
-        fillPrices(applyDiscount)
-      }else {
-        fillPrices(fixedPrice)
-      }
-    })
-  }
- 
- })
+  toggleBtns.forEach((item, index) => {
+    if (item) {
+      item.addEventListener("click", () => {
+        for (let i = 0; i < toggleBtns.length; i++) {
+          toggleBtns[i].classList.remove("active");
+        }
+        item.classList.add("active");
+        if (index === 1) {
+          subscription.classList.add("animate__animated", "animate__bounce");
+        } else {
+          subscription.classList.remove("animate__animated", "animate__bounce");
+        }
+        if (index === 1) {
+          const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
+          fillPrices(applyDiscount);
+        } else {
+          fillPrices(fixedPrice);
+        }
+      });
+    }
+  });
 }
-toggleBtns()
+toggleBtns();
 
+//addpricing page class
+
+function addClassPage() {
+  const arrayClasses = Array.from(document.body.children).map(
+    (item) => item.className
+  );
+  
+  if (arrayClasses.toString().indexOf("pricingPage")>-1) {
+    document.body.classList.add("pricing");
+  } else {
+    document.body.classList.remove("pricing");
+  }
+  //document.body.children.map((item)=>console.log(item))
+}
+addClassPage();

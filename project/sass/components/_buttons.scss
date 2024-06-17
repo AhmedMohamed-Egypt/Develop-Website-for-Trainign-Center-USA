@@ -31,6 +31,16 @@
     cursor: pointer;
     transition: .5s;
     border: 1px solid transparent;
+    &.requestdemo{
+        font-weight: 700;
+        padding: 16px 50px;
+        &:hover{
+             color: $green;
+             border: 1px solid $green ;
+             background-color: $white !important;
+         }
+       
+    }
     &.choosePlan{
         background-color: $white !important;
         color: $green ;
