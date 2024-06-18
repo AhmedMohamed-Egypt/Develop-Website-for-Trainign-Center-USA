@@ -217,3 +217,23 @@ function addClassPage() {
   //document.body.children.map((item)=>console.log(item))
 }
 addClassPage();
+function toggleFrequently(){
+  const allCards = document.querySelectorAll(".frequentlyAsk__container--card")
+  const allTxt = document.querySelectorAll(".frequentlyAsk__container--card p")
+
+  allCards.forEach((item,index)=>{
+    if(item){
+      item.addEventListener("click",()=>{
+      
+       if(allTxt[index].classList.contains('active')){
+        item.classList.remove('active')
+        allTxt[index].classList.remove('active')
+       }else {
+        allTxt[index].classList.add('active')
+        item.classList.add('active')
+       }
+      })
+    }
+  })
+}
+toggleFrequently()

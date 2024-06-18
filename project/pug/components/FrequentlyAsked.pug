@@ -1,12 +1,15 @@
 - var questionsList = [{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."},{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."},{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."}]
-mixin listQuestion 
+mixin listQuestion(className)
  each val in questionsList
-  div 
+  div(class=`${className} pdt-20 pdb-20 pdl-25 mrb-25 radius-6`)
    h3(class="font-outfit weight-600 size-18 black-7")=val.question
    p(class="grey-11 weight-400 size-16")=val.answer
+   button(class="") 
+    span(class="plus d-block")
+    span(class="minus d-block")
   
 div(class="frequentlyAsk")
  div(class="frequentlyAsk__container")
   h2(class="h2Heading black-7 text-center mrb-50") Frequently Asked Questions
-  +listQuestion
+  +listQuestion("frequentlyAsk__container--card")
   
