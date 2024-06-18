@@ -11,6 +11,13 @@
              max-width: 85%;
              @include max(992px){
                 max-width: 100%;
+
+             }
+             @include max(768px){
+               height: 500px;
+               overflow-y: scroll;
+               padding-bottom: 50px;
+                
              }
             }
         }
@@ -22,6 +29,11 @@
                 }
             }
         }
+    }
+    &__bottomfooter{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
     }
    
   
