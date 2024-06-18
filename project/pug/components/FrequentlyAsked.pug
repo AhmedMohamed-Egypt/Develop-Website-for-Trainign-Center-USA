@@ -1,0 +1,12 @@
+- var questionsList = [{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."},{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."},{question:"Can I upgrade between plans?",answer:"You can upgrade your existing plan to a plan with more features. If you decide to upgrade, we charge your payment method, and the new billing cycle runs. The upgrade takes effect immediately and your six month subscription will start over."}]
+mixin listQuestion 
+ each val in questionsList
+  div 
+   h3(class="font-outfit weight-600 size-18 black-7")=val.question
+   p(class="grey-11 weight-400 size-16")=val.answer
+  
+div(class="frequentlyAsk")
+ div(class="frequentlyAsk__container")
+  h2(class="h2Heading black-7 text-center mrb-50") Frequently Asked Questions
+  +listQuestion
+  

@@ -15,7 +15,13 @@ body{
     }
   }
   &.pricing {
+  //  background-color: $grey;
+  .container__navbarDew{
     background-color: $grey;
+    box-shadow: 14px 4px 13.1px 0px #ABABAB40;
+    padding: 20px 0;
+
+  }
     height: 4000px;
   }
  

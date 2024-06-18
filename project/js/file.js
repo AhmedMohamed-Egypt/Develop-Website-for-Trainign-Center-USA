@@ -183,11 +183,13 @@ function toggleBtns() {
           toggleBtns[i].classList.remove("active");
         }
         item.classList.add("active");
+        /*
         if (index === 1) {
           subscription.classList.add("animate__animated", "animate__bounce");
         } else {
           subscription.classList.remove("animate__animated", "animate__bounce");
         }
+        */
         if (index === 1) {
           const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
           fillPrices(applyDiscount);
