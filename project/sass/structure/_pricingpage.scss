@@ -19,6 +19,11 @@
                 left: auto;
                 top: -4px;
                 z-index: -1;
+                @include max(400px){
+                    width: 75px;
+                    height: 75px;
+                    right: -40px;
+                }
             }
             button{
                 width: 50%;

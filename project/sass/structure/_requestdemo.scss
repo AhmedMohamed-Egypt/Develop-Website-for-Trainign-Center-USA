@@ -6,14 +6,29 @@
 
 .requestDemo{
     padding-top: 200px;
-    background-color: $grey;
+    
     padding-bottom: 200px;
+    background-color: $grey;
+    @include max(1000px){
+        padding-top: 100px;
+    
+        padding-bottom: 100px;
+     }
  &__container{
-    max-width: 1250px;
+    width: 1250px;
     margin: auto;
+    max-width: 90%;
+    @include max(992px){
+        flex-direction: column;
+      }
     &--leftside{
         position: relative;
-        width: 500px;
+        width: 45%;
+        @include max(992px){
+            width: 100%;
+            margin-bottom: 20px;
+          }
+       
 
         img{
             width: 100%;
@@ -60,8 +75,14 @@
     }
     &--rightside{
         width: 50%;
+        @include max(992px){
+            width: 100%;
+          }
         &--heading{
             line-height: 1.1;
+            @include max(768px){
+               font-size: 36px;
+              }
         }
         &--txt{
             max-width: 90%;

@@ -1,14 +1,19 @@
 .frequentlyAsk{
     padding-top: 150px;
     padding-bottom: 150px;
+    @include max(768px){
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
     &__container{
         max-width: 1250px;
         margin: auto;
         &--card{
             border: 1px solid #C2C2C2;
-            max-width: 900px;
+            width: 900px;
             margin: auto;
             position: relative;
+            max-width: 90%;
             cursor: pointer;
             &.active{
                 background-color: $grey;
