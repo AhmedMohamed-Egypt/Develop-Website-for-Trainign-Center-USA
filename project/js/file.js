@@ -313,7 +313,8 @@ function calculateSaving() {
           }
         }
       }
-      if (data.livingTraing <= data.DewdroppersTraining) {
+      if (data.DewdroppersTraining > 0 &&   data.livingTraing <= data.DewdroppersTraining) {
+        
         fillingError(
           "Live Training should be greater than Dewdroppers Training"
         );
