@@ -1,5 +1,4 @@
-let plan;
-let savingResult;
+
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
@@ -261,7 +260,8 @@ if (
     $(".saveTime__estimate--formTwo--inputGroup--input.select").niceSelect();
   });
 }
-
+let plan;
+let savingResult;
 function getValuePlan() {
   window.addEventListener("load", () => {
     document.querySelectorAll(".list li").forEach((item) => {
@@ -372,4 +372,4 @@ function calculateSaving() {
     });
   }
 }
-//calculateSaving();
+calculateSaving();
