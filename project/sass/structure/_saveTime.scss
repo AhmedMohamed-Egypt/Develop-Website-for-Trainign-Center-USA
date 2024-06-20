@@ -91,7 +91,10 @@
                     max-width: 250px;
                     text-align: center;
                     &.active{
-                        &::placeholder{
+                        &::-webkit-input-placeholder{
+                            color: $black !important;
+                        }
+                        &:-moz-placeholder{
                             color: $black !important;
                         }
                     }
