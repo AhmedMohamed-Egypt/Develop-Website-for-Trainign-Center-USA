@@ -362,7 +362,7 @@ function calculateSaving() {
         data.noOfStaff *
         data.noOfCamapign - plan
         savingResult = resultCalc.toLocaleString('en-US');
-        activeSavingResult();
+     //   activeSavingResult();
        // savingResulInput.setAttribute("placeholder", savingResult);
        savingResulInput.value = savingResult
       }
