@@ -1,15 +1,16 @@
-
-let  plan;
-let savingResult ;
-const savingResulInput = document.querySelector('.savingResult')
-const errorForm = document.querySelector(".saveTime__estimate--form__error")
+let plan;
+let savingResult;
+const savingResulInput = document.querySelector(".savingResult");
+const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup--input"
 );
 const allParent = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup"
 );
-const calcButton = document.querySelector(".saveTime__estimate--formTwo button")
+const calcButton = document.querySelector(
+  ".saveTime__estimate--formTwo button"
+);
 const signUpBtn = document.querySelectorAll(".signBtn");
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
 
@@ -261,28 +262,22 @@ if (
   });
 }
 
-function getValuePlan(){
-  
+function getValuePlan() {
   window.addEventListener("load", () => {
-   
     document.querySelectorAll(".list li").forEach((item) => {
-     if(item.classList.contains("selected")){
-      plan = +item.getAttribute("data-value")
-     }
-    //  console.log(item.getAttribute("class","selected"))
+      if (item.classList.contains("selected")) {
+        plan = +item.getAttribute("data-value");
+      }
+      //  console.log(item.getAttribute("class","selected"))
 
       item.addEventListener("click", () => {
-        
-        plan = +item.getAttribute("data-value")
-        
+        plan = +item.getAttribute("data-value");
       });
     });
   });
-  return plan
+  return plan;
 }
-getValuePlan()
-
-
+getValuePlan();
 
 function calculateSaving() {
   let data = {
@@ -293,16 +288,17 @@ function calculateSaving() {
     noOfCamapign: false,
   };
 
-
   const keysData = Object.keys(data);
   let error;
-  function fillingError(erorrTxt){
-    errorForm.textContent = erorrTxt
+  function fillingError(erorrTxt) {
+    errorForm.textContent = erorrTxt;
   }
-  function activeSavingResult(){
-    savingResulInput.classList.add('active')
-    
+  function activeSavingResult() {
+    savingResulInput.classList.add("active");
   }
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
 
   allInputs.forEach((item, index) => {
     item.addEventListener("keyup", () => {
@@ -319,11 +315,12 @@ function calculateSaving() {
           }
         }
       }
-      if(data.livingTraing <= data.DewdroppersTraining){
-        
-        fillingError("Live Training should be greater than Dewdroppers Training")
-      }else {
-        fillingError("")
+      if (data.livingTraing <= data.DewdroppersTraining) {
+        fillingError(
+          "Live Training should be greater than Dewdroppers Training"
+        );
+      } else {
+        fillingError("");
       }
 
       if (
@@ -331,7 +328,7 @@ function calculateSaving() {
         data.DewdroppersTraining !== false &&
         data.staffRate !== false &&
         data.noOfStaff !== false &&
-        data.noOfCamapign !== false && 
+        data.noOfCamapign !== false &&
         data.livingTraing > data.DewdroppersTraining
       ) {
         error = false;
@@ -339,45 +336,38 @@ function calculateSaving() {
         error = true;
       }
       if (error) {
-        calcButton.classList.remove('active')
-        calcButton.setAttribute('disabled',true)
-        savingResulInput.setAttribute('placeholder',"00000")
-      }else {
-        calcButton.classList.add('active')
-        calcButton.removeAttribute('disabled')
-        
+        calcButton.classList.remove("active");
+        calcButton.setAttribute("disabled", true);
+        savingResulInput.setAttribute("placeholder", "00000");
+      } else {
+        calcButton.classList.add("active");
+        calcButton.removeAttribute("disabled");
       }
     });
-  
   });
-  if(calcButton){
-    calcButton.addEventListener('click',()=>{
-
-      const slotOne = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign
-      if(slotOne<plan){
-        error = true
-        fillingError("Please Review equivalent Plan")
-       
-        
-      }else {
-        fillingError("")
-        savingResult = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign - plan
-        savingResulInput.setAttribute("placeholder",savingResult)
-        activeSavingResult()
+ 
+  if (calcButton) {
+    calcButton.addEventListener("click", () => {
+      const slotOne =
+        (data.livingTraing - data.DewdroppersTraining) *
+        data.staffRate *
+        data.noOfStaff *
+        data.noOfCamapign;
+      if (slotOne < plan) {
+        error = true;
+        fillingError("Please Review equivalent Plan");
+      } else {
+        fillingError("");
+        savingResult =numberWithCommas( (data.livingTraing - data.DewdroppersTraining) *
+        data.staffRate *
+        data.noOfStaff *
+        data.noOfCamapign -
+      plan)
+         
+        savingResulInput.setAttribute("placeholder", savingResult);
+        activeSavingResult();
       }
-  
-    
-     /*
-      console.log(typeof data.livingTraing)
-      console.log(typeof data.DewdroppersTraining)
-      console.log(typeof data.staffRate)
-      console.log(typeof data.noOfStaff)
-      console.log(typeof data.noOfCamapign)
-      console.log(typeof plan)
-      */
-  console.log(savingResult)
-    })
+    });
   }
-  
 }
 calculateSaving();

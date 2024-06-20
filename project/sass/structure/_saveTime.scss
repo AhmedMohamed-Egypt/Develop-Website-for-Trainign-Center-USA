@@ -89,6 +89,7 @@
                 &.savingResult{
                     min-width: 100px;
                     max-width: 250px;
+                    text-align: center;
                     &.active{
                         &::placeholder{
                             color: $black;
