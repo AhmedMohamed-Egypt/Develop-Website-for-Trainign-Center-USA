@@ -1,21 +1,21 @@
 var plan;
 var savingResult;
-const savingResulInput = document.querySelector(".savingResult");
-const errorForm = document.querySelector(".saveTime__estimate--form__error");
-const allInputs = document.querySelectorAll(
+var savingResulInput = document.querySelector(".savingResult");
+var errorForm = document.querySelector(".saveTime__estimate--form__error");
+var allInputs = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup--input"
 );
-const allParent = document.querySelectorAll(
+var allParent = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup"
 );
-const calcButton = document.querySelector(
+var calcButton = document.querySelector(
   ".saveTime__estimate--formTwo button"
 );
-const signUpBtn = document.querySelectorAll(".signBtn");
-const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
+var signUpBtn = document.querySelectorAll(".signBtn");
+var closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
 
 function translateElemnts() {
-  const allImgs = document.querySelectorAll(
+  var allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
   );
   allImgs.forEach((item, index) => {
@@ -27,11 +27,11 @@ function translateElemnts() {
 translateElemnts();
 
 function swiperCards() {
-  const swiperTestmonial = document.querySelector(
+  var swiperTestmonial = document.querySelector(
     ".testmonial__swiper .swiper"
   );
   if (swiperTestmonial) {
-    const swiper = new Swiper(".testmonial__swiper .swiper", {
+    var swiper = new Swiper(".testmonial__swiper .swiper", {
       // Default parameters
       slidesPerView: 3,
       spaceBetween: 5,
@@ -75,7 +75,7 @@ window.onscroll = () => {
 };
 
 function clickHamburg() {
-  const hamBurgBtn = document.querySelector(".habmurgMenu");
+  var hamBurgBtn = document.querySelector(".habmurgMenu");
   var show = false;
   hamBurgBtn.addEventListener("click", () => {
     if (!show) {
@@ -113,14 +113,14 @@ fireModal(signUpBtn, closeBtnModal, "modalOpen");
 //Activate class on navbar
 
 function activateClassNavBar() {
-  const allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
+  var allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
 
-  const pathName = window.location.pathname;
+  var pathName = window.location.pathname;
 
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
-    const pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
-    const purePathName = pathName.slice(1).toLowerCase();
+    var pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
+    var purePathName = pathName.slice(1).toLowerCase();
 
     if (index < 4) {
       pureAttribute === purePathName
@@ -139,9 +139,9 @@ activateClassNavBar();
 //swiper pricing page
 
 function swiperPricingPage() {
-  const swiperPricing = document.querySelector(".pricingPage__swiper .swiper");
+  var swiperPricing = document.querySelector(".pricingPage__swiper .swiper");
   if (swiperPricing) {
-    const swiper = new Swiper(".pricingPage__swiper .swiper", {
+    var swiper = new Swiper(".pricingPage__swiper .swiper", {
       // Default parameters
       slidesPerView: 3,
       spaceBetween: 5,
@@ -174,14 +174,14 @@ swiperPricingPage();
 //toggle Button
 
 function toggleBtns() {
-  const fixedPrice = [30, 60, 130, 200];
-  const toggleBtns = document.querySelectorAll(
+  var fixedPrice = [30, 60, 130, 200];
+  var toggleBtns = document.querySelectorAll(
     ".pricingPage__container--toggleBtns button"
   );
-  const subscription = document.querySelector(
+  var subscription = document.querySelector(
     ".pricingPage__container--subscription"
   );
-  const allPrices = document.querySelectorAll(".cardpricing__price--value");
+  var allPrices = document.querySelectorAll(".cardpricing__price--value");
   function fillPrices(prices) {
     allPrices.forEach((item, index) => {
       item.textContent = prices[index];
@@ -204,7 +204,7 @@ function toggleBtns() {
         }
         */
         if (index === 1) {
-          const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
+          var applyDiscount = fixedPrice.map((item) => item - item * 0.2);
           fillPrices(applyDiscount);
         } else {
           fillPrices(fixedPrice);
@@ -218,7 +218,7 @@ toggleBtns();
 //addpricing page class
 
 function addClassPage() {
-  const arrayClasses = Array.from(document.body.children).map(
+  var arrayClasses = Array.from(document.body.children).map(
     (item) => item.className
   );
 
@@ -231,8 +231,8 @@ function addClassPage() {
 }
 addClassPage();
 function toggleFrequently() {
-  const allCards = document.querySelectorAll(".frequentlyAsk__container--card");
-  const allTxt = document.querySelectorAll(".frequentlyAsk__container--card p");
+  var allCards = document.querySelectorAll(".frequentlyAsk__container--card");
+  var allTxt = document.querySelectorAll(".frequentlyAsk__container--card p");
 
   allCards.forEach((item, index) => {
     if (item) {
@@ -288,7 +288,7 @@ function calculateSaving() {
     noOfCamapign: false,
   };
 
-  const keysData = Object.keys(data);
+  var keysData = Object.keys(data);
   var error;
   function fillingError(erorrTxt) {
     errorForm.textContent = erorrTxt;
@@ -350,7 +350,7 @@ function calculateSaving() {
  
   if (calcButton) {
     calcButton.addEventListener("click", () => {
-      const slotOne =
+      var slotOne =
         (data.livingTraing - data.DewdroppersTraining) *
         data.staffRate *
         data.noOfStaff *
