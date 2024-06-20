@@ -1,21 +1,21 @@
-var plan;
-var savingResult;
-var savingResulInput = document.querySelector(".savingResult");
-var errorForm = document.querySelector(".saveTime__estimate--form__error");
-var allInputs = document.querySelectorAll(
+let plan;
+let savingResult;
+const savingResulInput = document.querySelector(".savingResult");
+const errorForm = document.querySelector(".saveTime__estimate--form__error");
+const allInputs = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup--input"
 );
-var allParent = document.querySelectorAll(
+const allParent = document.querySelectorAll(
   ".saveTime__estimate--formTwo--inputGroup"
 );
-var calcButton = document.querySelector(
+const calcButton = document.querySelector(
   ".saveTime__estimate--formTwo button"
 );
-var signUpBtn = document.querySelectorAll(".signBtn");
-var closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
+const signUpBtn = document.querySelectorAll(".signBtn");
+const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
 
 function translateElemnts() {
-  var allImgs = document.querySelectorAll(
+  const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
   );
   allImgs.forEach((item, index) => {
@@ -27,11 +27,11 @@ function translateElemnts() {
 translateElemnts();
 
 function swiperCards() {
-  var swiperTestmonial = document.querySelector(
+  const swiperTestmonial = document.querySelector(
     ".testmonial__swiper .swiper"
   );
   if (swiperTestmonial) {
-    var swiper = new Swiper(".testmonial__swiper .swiper", {
+    const swiper = new Swiper(".testmonial__swiper .swiper", {
       // Default parameters
       slidesPerView: 3,
       spaceBetween: 5,
@@ -75,8 +75,8 @@ window.onscroll = () => {
 };
 
 function clickHamburg() {
-  var hamBurgBtn = document.querySelector(".habmurgMenu");
-  var show = false;
+  const hamBurgBtn = document.querySelector(".habmurgMenu");
+  let show = false;
   hamBurgBtn.addEventListener("click", () => {
     if (!show) {
       document.body.classList.add("sliding");
@@ -113,14 +113,14 @@ fireModal(signUpBtn, closeBtnModal, "modalOpen");
 //Activate class on navbar
 
 function activateClassNavBar() {
-  var allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
+  const allLinks = document.querySelectorAll(".navbarDew  >ul >li>a");
 
-  var pathName = window.location.pathname;
+  const pathName = window.location.pathname;
 
   allLinks.forEach((item, index) => {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
-    var pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
-    var purePathName = pathName.slice(1).toLowerCase();
+    const pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
+    const purePathName = pathName.slice(1).toLowerCase();
 
     if (index < 4) {
       pureAttribute === purePathName
@@ -139,9 +139,9 @@ activateClassNavBar();
 //swiper pricing page
 
 function swiperPricingPage() {
-  var swiperPricing = document.querySelector(".pricingPage__swiper .swiper");
+  const swiperPricing = document.querySelector(".pricingPage__swiper .swiper");
   if (swiperPricing) {
-    var swiper = new Swiper(".pricingPage__swiper .swiper", {
+    const swiper = new Swiper(".pricingPage__swiper .swiper", {
       // Default parameters
       slidesPerView: 3,
       spaceBetween: 5,
@@ -174,14 +174,14 @@ swiperPricingPage();
 //toggle Button
 
 function toggleBtns() {
-  var fixedPrice = [30, 60, 130, 200];
-  var toggleBtns = document.querySelectorAll(
+  const fixedPrice = [30, 60, 130, 200];
+  const toggleBtns = document.querySelectorAll(
     ".pricingPage__container--toggleBtns button"
   );
-  var subscription = document.querySelector(
+  const subscription = document.querySelector(
     ".pricingPage__container--subscription"
   );
-  var allPrices = document.querySelectorAll(".cardpricing__price--value");
+  const allPrices = document.querySelectorAll(".cardpricing__price--value");
   function fillPrices(prices) {
     allPrices.forEach((item, index) => {
       item.textContent = prices[index];
@@ -192,7 +192,7 @@ function toggleBtns() {
   toggleBtns.forEach((item, index) => {
     if (item) {
       item.addEventListener("click", () => {
-        for (var i = 0; i < toggleBtns.length; i++) {
+        for (let i = 0; i < toggleBtns.length; i++) {
           toggleBtns[i].classList.remove("active");
         }
         item.classList.add("active");
@@ -204,7 +204,7 @@ function toggleBtns() {
         }
         */
         if (index === 1) {
-          var applyDiscount = fixedPrice.map((item) => item - item * 0.2);
+          const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
           fillPrices(applyDiscount);
         } else {
           fillPrices(fixedPrice);
@@ -218,7 +218,7 @@ toggleBtns();
 //addpricing page class
 
 function addClassPage() {
-  var arrayClasses = Array.from(document.body.children).map(
+  const arrayClasses = Array.from(document.body.children).map(
     (item) => item.className
   );
 
@@ -231,8 +231,8 @@ function addClassPage() {
 }
 addClassPage();
 function toggleFrequently() {
-  var allCards = document.querySelectorAll(".frequentlyAsk__container--card");
-  var allTxt = document.querySelectorAll(".frequentlyAsk__container--card p");
+  const allCards = document.querySelectorAll(".frequentlyAsk__container--card");
+  const allTxt = document.querySelectorAll(".frequentlyAsk__container--card p");
 
   allCards.forEach((item, index) => {
     if (item) {
@@ -280,7 +280,7 @@ function getValuePlan() {
 getValuePlan();
 
 function calculateSaving() {
-  var data = {
+  let data = {
     livingTraing: false,
     DewdroppersTraining: false,
     staffRate: false,
@@ -288,8 +288,8 @@ function calculateSaving() {
     noOfCamapign: false,
   };
 
-  var keysData = Object.keys(data);
-  var error;
+  const keysData = Object.keys(data);
+  let error;
   function fillingError(erorrTxt) {
     errorForm.textContent = erorrTxt;
   }
@@ -304,7 +304,7 @@ function calculateSaving() {
 
   allInputs.forEach((item, index) => {
     item.addEventListener("keyup", () => {
-      for (var i = 0; i < allInputs.length; i++) {
+      for (let i = 0; i < allInputs.length; i++) {
         if (index === i) {
           if (!isNaN(item.value) && item.value.trim().length !== 0) {
             data[keysData[i]] = +item.value;
@@ -350,7 +350,7 @@ function calculateSaving() {
  
   if (calcButton) {
     calcButton.addEventListener("click", () => {
-      var slotOne =
+      const slotOne =
         (data.livingTraing - data.DewdroppersTraining) *
         data.staffRate *
         data.noOfStaff *
