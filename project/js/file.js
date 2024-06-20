@@ -372,4 +372,4 @@ function calculateSaving() {
     });
   }
 }
-calculateSaving();
+//calculateSaving();
