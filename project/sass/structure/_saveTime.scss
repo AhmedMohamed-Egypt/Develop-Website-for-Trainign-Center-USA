@@ -28,6 +28,7 @@
               font-weight: bold;
               line-height: 1.75;
               min-height: 30px;
+              margin-bottom: 10px;
             }
         }
         &--formTwo{
@@ -36,7 +37,8 @@
             flex-wrap: wrap;
             justify-content: space-between;
             @include max(450px){
-                margin-top: 60px !important;
+                padding-top: 60px !important;
+                margin-top: 0 !important;
             }
         }
         &--bkgroundBlue{
