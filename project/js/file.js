@@ -1,5 +1,4 @@
-let plan;
-let savingResult;
+
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
@@ -13,7 +12,8 @@ const calcButton = document.querySelector(
 );
 const signUpBtn = document.querySelectorAll(".signBtn");
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
-
+let plan;
+let savingResult;
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
