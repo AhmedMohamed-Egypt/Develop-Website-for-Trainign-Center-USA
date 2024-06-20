@@ -341,7 +341,7 @@ function calculateSaving() {
       if (error) {
         calcButton.classList.remove('active')
         calcButton.setAttribute('disabled',true)
-        savingResulInput.setAttribute('placeholder',"0000")
+        savingResulInput.setAttribute('placeholder',"00000")
       }else {
         calcButton.classList.add('active')
         calcButton.removeAttribute('disabled')
@@ -359,6 +359,7 @@ function calculateSaving() {
      
       
     }else {
+      fillingError("")
       savingResult = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign - plan
       savingResulInput.setAttribute("placeholder",savingResult)
       activeSavingResult()
