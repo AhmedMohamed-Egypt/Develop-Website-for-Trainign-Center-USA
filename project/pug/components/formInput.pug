@@ -1,4 +1,4 @@
-- var contents = [{icon:"icon-fluent_live-20-filled",label:"Live Training",placeholder:02},{icon:"icon-healthicons_i-training-class-outline",label:"Dewdroppers Training ",placeholder:02},{icon:"icon-solar_dollar-linear",label:"Staff Rate ",placeholder:02},{icon:"icon-threeDots",label:"Number of Staff *",placeholder:02},{icon:"icon-threeDots",label:"No. of Campaigns",placeholder:02}]
+- var contents = [{icon:"icon-fluent_live-20-filled",label:"Live Training *",placeholder:02},{icon:"icon-healthicons_i-training-class-outline",label:"Dewdroppers Training *",placeholder:02},{icon:"icon-solar_dollar-linear",label:"Staff Rate *",placeholder:02},{icon:"icon-threeDots",label:"Number of Staff *",placeholder:02},{icon:"icon-threeDots",label:"No. of Campaigns *",placeholder:02}]
 
 - var options = [{name:"Startup",value:288},{name:"Local",value:576},{name:"Regional",value:1248},{name:"National",value:1920}]
  each val,index  in contents 
@@ -7,7 +7,7 @@
    span(class=`${val.icon} size-25`)
    input(type="text" placeholder=`` value="" class=`saveTime__estimate--formTwo--inputGroup--input`)
  div.saveTime__estimate--formTwo--inputGroup
-   label(class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label") Plan
+   label(class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label") Plan *
    span(class=`icon-fluent_live-20-filled size-25`)
    select(class="saveTime__estimate--formTwo--inputGroup--input select")
     each val in options 
