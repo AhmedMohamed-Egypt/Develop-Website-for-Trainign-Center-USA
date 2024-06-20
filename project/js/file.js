@@ -314,7 +314,7 @@ function calculateSaving() {
         }
       }
       if (data.DewdroppersTraining > 0 &&   data.livingTraing <= data.DewdroppersTraining) {
-        
+       
         fillingError(
           "Live Training should be greater than Dewdroppers Training"
         );
@@ -337,7 +337,7 @@ function calculateSaving() {
       if (error) {
         calcButton.classList.remove("active");
         calcButton.setAttribute("disabled", true);
-        savingResulInput.setAttribute("placeholder", "00000");
+        savingResulInput.value = "00000"
       } else {
         calcButton.classList.add("active");
         calcButton.removeAttribute("disabled");
@@ -363,8 +363,8 @@ function calculateSaving() {
         data.noOfCamapign - plan
         savingResult = resultCalc.toLocaleString('en-US');
         activeSavingResult();
-        savingResulInput.setAttribute("placeholder", savingResult);
-       
+       // savingResulInput.setAttribute("placeholder", savingResult);
+       savingResulInput.value = savingResult
       }
     });
   }
