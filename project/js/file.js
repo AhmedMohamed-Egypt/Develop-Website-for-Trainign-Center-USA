@@ -1,5 +1,5 @@
-var plan;
-var savingResult;
+let plan;
+let savingResult;
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
