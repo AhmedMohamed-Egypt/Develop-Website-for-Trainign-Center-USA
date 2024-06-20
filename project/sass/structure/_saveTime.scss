@@ -92,7 +92,7 @@
                     text-align: center;
                     &.active{
                         &::placeholder{
-                            color: $black;
+                            color: $black !important;
                         }
                     }
                 }
