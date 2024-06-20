@@ -1,4 +1,5 @@
-
+var plan;
+var savingResult;
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
@@ -12,8 +13,7 @@ const calcButton = document.querySelector(
 );
 const signUpBtn = document.querySelectorAll(".signBtn");
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
-let plan;
-let savingResult;
+
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
@@ -76,7 +76,7 @@ window.onscroll = () => {
 
 function clickHamburg() {
   const hamBurgBtn = document.querySelector(".habmurgMenu");
-  let show = false;
+  var show = false;
   hamBurgBtn.addEventListener("click", () => {
     if (!show) {
       document.body.classList.add("sliding");
@@ -192,7 +192,7 @@ function toggleBtns() {
   toggleBtns.forEach((item, index) => {
     if (item) {
       item.addEventListener("click", () => {
-        for (let i = 0; i < toggleBtns.length; i++) {
+        for (var i = 0; i < toggleBtns.length; i++) {
           toggleBtns[i].classList.remove("active");
         }
         item.classList.add("active");
@@ -280,7 +280,7 @@ function getValuePlan() {
 getValuePlan();
 
 function calculateSaving() {
-  let data = {
+  var data = {
     livingTraing: false,
     DewdroppersTraining: false,
     staffRate: false,
@@ -289,7 +289,7 @@ function calculateSaving() {
   };
 
   const keysData = Object.keys(data);
-  let error;
+  var error;
   function fillingError(erorrTxt) {
     errorForm.textContent = erorrTxt;
   }
@@ -304,7 +304,7 @@ function calculateSaving() {
 
   allInputs.forEach((item, index) => {
     item.addEventListener("keyup", () => {
-      for (let i = 0; i < allInputs.length; i++) {
+      for (var i = 0; i < allInputs.length; i++) {
         if (index === i) {
           if (!isNaN(item.value) && item.value.trim().length !== 0) {
             data[keysData[i]] = +item.value;
