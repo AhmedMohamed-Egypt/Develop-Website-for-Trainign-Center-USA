@@ -302,7 +302,7 @@ function calculateSaving() {
     item.addEventListener("keyup", () => {
       for (let i = 0; i < allInputs.length; i++) {
         if (index === i) {
-          if (!isNaN(item.value) && item.value.trim().length !== 0) {
+          if (!isNaN(item.value) && item.value.trim().length !== 0 && !error) {
             data[keysData[i]] = +item.value;
             allParent[index].classList.add("right");
             allParent[index].classList.remove("wrong");
