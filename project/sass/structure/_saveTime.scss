@@ -19,6 +19,9 @@
             padding-bottom: 50px;
             position: relative;
             z-index: 99;
+            @include max(450px){
+                padding-bottom: 15px;
+            }
             &__error{
               transform: translateY(50px);
               color: rgb(167, 15, 15);
@@ -32,6 +35,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            @include max(450px){
+                margin-top: 60px !important;
+            }
         }
         &--bkgroundBlue{
             position: absolute;
@@ -49,7 +55,7 @@
       
         &--inputgroup{
             align-items: flex-end;
-            transform: translateX(50px);
+            //transform: translateX(50px);
             &--line{
         width: 4px;
         height: 60px;
@@ -80,6 +86,7 @@
                 }
                 &.savingResult{
                     width: 350px;
+                    max-width: 250px;
                     &.active{
                         &::placeholder{
                             color: $black;
