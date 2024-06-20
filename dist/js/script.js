@@ -296,10 +296,6 @@ function calculateSaving() {
   function activeSavingResult() {
     savingResulInput.classList.add("active");
   }
-  
-  function numberWithCommas(num) {
-    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-}
 
 
   allInputs.forEach((item, index) => {
@@ -364,7 +360,7 @@ function calculateSaving() {
         data.staffRate *
         data.noOfStaff *
         data.noOfCamapign - plan
-        savingResult = numberWithCommas(resultCalc)
+        savingResult = resultCalc.toLocaleString('en-US');
          
         savingResulInput.setAttribute("placeholder", savingResult);
         activeSavingResult();
