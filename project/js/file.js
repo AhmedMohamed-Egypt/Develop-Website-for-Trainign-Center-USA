@@ -297,8 +297,8 @@ function calculateSaving() {
     savingResulInput.classList.add("active");
   }
   
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  function numberWithCommas(num) {
+    return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
 
@@ -360,11 +360,11 @@ function calculateSaving() {
         fillingError("Please Review equivalent Plan");
       } else {
         fillingError("");
-        savingResult = numberWithCommas((data.livingTraing - data.DewdroppersTraining) *
+        const resultCalc = (data.livingTraing - data.DewdroppersTraining) *
         data.staffRate *
         data.noOfStaff *
-        data.noOfCamapign -
-      plan)
+        data.noOfCamapign - plan
+        savingResult = numberWithCommas(resultCalc)
          
         savingResulInput.setAttribute("placeholder", savingResult);
         activeSavingResult();
