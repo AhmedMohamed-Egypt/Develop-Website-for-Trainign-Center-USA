@@ -350,31 +350,34 @@ function calculateSaving() {
     });
   
   });
-  calcButton.addEventListener('click',()=>{
+  if(calcButton){
+    calcButton.addEventListener('click',()=>{
 
-    const slotOne = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign
-    if(slotOne<plan){
-      error = true
-      fillingError("Please Review equivalent Plan")
-     
-      
-    }else {
-      fillingError("")
-      savingResult = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign - plan
-      savingResulInput.setAttribute("placeholder",savingResult)
-      activeSavingResult()
-    }
-
+      const slotOne = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign
+      if(slotOne<plan){
+        error = true
+        fillingError("Please Review equivalent Plan")
+       
+        
+      }else {
+        fillingError("")
+        savingResult = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign - plan
+        savingResulInput.setAttribute("placeholder",savingResult)
+        activeSavingResult()
+      }
   
-   /*
-    console.log(typeof data.livingTraing)
-    console.log(typeof data.DewdroppersTraining)
-    console.log(typeof data.staffRate)
-    console.log(typeof data.noOfStaff)
-    console.log(typeof data.noOfCamapign)
-    console.log(typeof plan)
-    */
-console.log(savingResult)
-  })
+    
+     /*
+      console.log(typeof data.livingTraing)
+      console.log(typeof data.DewdroppersTraining)
+      console.log(typeof data.staffRate)
+      console.log(typeof data.noOfStaff)
+      console.log(typeof data.noOfCamapign)
+      console.log(typeof plan)
+      */
+  console.log(savingResult)
+    })
+  }
+  
 }
 calculateSaving();
