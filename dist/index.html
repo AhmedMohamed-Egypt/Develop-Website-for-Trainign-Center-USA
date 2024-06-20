@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandingPage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body> 
@@ -91,38 +92,45 @@
               <form class="saveTime__estimate--form">
                 <p class="drkBlue weight-400 size-25 font-dmsans text-center mrb-10 ">Your Estimated Yearly Savings</p>
                 <div class="d-flex saveTime__estimate--inputgroup justify-content-center"><span class="drkBlue weight-400 size-55 font-outfit d-block saveTime__estimate--inputgroup--sign">$</span><span class=" d-block weight-200 size-55 saveTime__estimate--inputgroup--line"> </span>
-                  <input class="border-none saveTime__estimate--inputgroup--input" type="text" placeholder="00000">
+                  <input class="border-none saveTime__estimate--inputgroup--input savingResult" type="text" disabled placeholder="00000">
                   <button class="customBtn startSaving">Start Saving</button>
                 </div>
               </form>
               <div class="saveTime__estimate--bkgroundBlue"></div>
+              <p class="saveTime__estimate--form__error"> </p>
             </div>
             <form class="saveTime__estimate--formTwo mtop-50">
               <div class="saveTime__estimate--formTwo--inputGroup">
                 <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">Live Training</label><span class="icon-fluent_live-20-filled size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="" value="">
               </div>
               <div class="saveTime__estimate--formTwo--inputGroup">
                 <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">Dewdroppers Training </label><span class="icon-healthicons_i-training-class-outline size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="" value="">
               </div>
               <div class="saveTime__estimate--formTwo--inputGroup">
                 <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">Staff Rate </label><span class="icon-solar_dollar-linear size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="" value="">
               </div>
               <div class="saveTime__estimate--formTwo--inputGroup">
                 <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">Number of Staff *</label><span class="icon-threeDots size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="" value="">
               </div>
               <div class="saveTime__estimate--formTwo--inputGroup">
                 <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">No. of Campaigns</label><span class="icon-threeDots size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="" value="">
               </div>
               <div class="saveTime__estimate--formTwo--inputGroup">
-                <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label">Dewdroppers Plan </label><span class="icon-fluent_live-20-filled size-25"></span>
-                <input class="saveTime__estimate--formTwo--inputGroup--input" type="text" placeholder="">
+                <label class="font-dmsans weight-400 size-18 grey-4 saveTime__estimate--formTwo--inputGroup--label"> </label><span class="icon-fluent_live-20-filled size-25"></span>
+                <select class="saveTime__estimate--formTwo--inputGroup--input select">
+                  <option value="288">Startup</option>
+                  <option value="576">Local</option>
+                  <option value="1248">Regional</option>
+                  <option value="1920">National</option>
+                </select>
               </div>
-              <button class="customBtn w-100 mtop-20 hoverContact" type="submit">Calculate Yearly Savings Estimate</button>
+              <!--{icon:"icon-fluent_live-20-filled",label:"Dewdroppers Plan ",placeholder:02}-->
+              <button class="customBtn w-100 mtop-20 hoverContact" type="button" disabled>Calculate Yearly Savings Estimate</button>
             </form>
           </div>
         </div>
@@ -234,7 +242,9 @@
         </div>
         <div class="modalSignUp__closeBtn"><img src="images/closeIcon.png"></div>
       </div>
-    </div><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

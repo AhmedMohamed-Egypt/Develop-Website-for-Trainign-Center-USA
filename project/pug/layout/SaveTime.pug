@@ -11,13 +11,15 @@
       div(class="d-flex saveTime__estimate--inputgroup justify-content-center")
        span(class="drkBlue weight-400 size-55 font-outfit d-block saveTime__estimate--inputgroup--sign") $
        span(class=" d-block weight-200 size-55 saveTime__estimate--inputgroup--line") 
-     
-       input(type="text" class="border-none saveTime__estimate--inputgroup--input" placeholder="00000")
+    
+       input(type="text" class="border-none saveTime__estimate--inputgroup--input savingResult" disabled placeholder="00000")
        button(class="customBtn startSaving") Start Saving
+    
      .saveTime__estimate--bkgroundBlue
+     p(class="saveTime__estimate--form__error") 
     form(class="saveTime__estimate--formTwo mtop-50")
      include ./../components/formInput.pug
-     button(type="submit" class="customBtn w-100 mtop-20 hoverContact") Calculate Yearly Savings Estimate
+     button(type="button" disabled class="customBtn w-100 mtop-20 hoverContact") Calculate Yearly Savings Estimate
       
 
     

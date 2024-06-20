@@ -1,3 +1,15 @@
+
+let  plan;
+let savingResult ;
+const savingResulInput = document.querySelector('.savingResult')
+const errorForm = document.querySelector(".saveTime__estimate--form__error")
+const allInputs = document.querySelectorAll(
+  ".saveTime__estimate--formTwo--inputGroup--input"
+);
+const allParent = document.querySelectorAll(
+  ".saveTime__estimate--formTwo--inputGroup"
+);
+const calcButton = document.querySelector(".saveTime__estimate--formTwo button")
 const signUpBtn = document.querySelectorAll(".signBtn");
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
 
@@ -108,7 +120,7 @@ function activateClassNavBar() {
     // item.classList.add(`${item.getAttribute("href")===pathName?'activelink':'noActive'}`)
     const pureAttribute = item.getAttribute("href").slice(1).toLowerCase();
     const purePathName = pathName.slice(1).toLowerCase();
-    console.log(pureAttribute.trim(), purePathName.trim());
+
     if (index < 4) {
       pureAttribute === purePathName
         ? item.classList.add("activelink")
@@ -208,8 +220,8 @@ function addClassPage() {
   const arrayClasses = Array.from(document.body.children).map(
     (item) => item.className
   );
-  
-  if (arrayClasses.toString().indexOf("pricingPage")>-1) {
+
+  if (arrayClasses.toString().indexOf("pricingPage") > -1) {
     document.body.classList.add("pricing");
   } else {
     document.body.classList.remove("pricing");
@@ -217,23 +229,151 @@ function addClassPage() {
   //document.body.children.map((item)=>console.log(item))
 }
 addClassPage();
-function toggleFrequently(){
-  const allCards = document.querySelectorAll(".frequentlyAsk__container--card")
-  const allTxt = document.querySelectorAll(".frequentlyAsk__container--card p")
+function toggleFrequently() {
+  const allCards = document.querySelectorAll(".frequentlyAsk__container--card");
+  const allTxt = document.querySelectorAll(".frequentlyAsk__container--card p");
 
-  allCards.forEach((item,index)=>{
-    if(item){
-      item.addEventListener("click",()=>{
-      
-       if(allTxt[index].classList.contains('active')){
-        item.classList.remove('active')
-        allTxt[index].classList.remove('active')
-       }else {
-        allTxt[index].classList.add('active')
-        item.classList.add('active')
-       }
-      })
+  allCards.forEach((item, index) => {
+    if (item) {
+      item.addEventListener("click", () => {
+        if (allTxt[index].classList.contains("active")) {
+          item.classList.remove("active");
+          allTxt[index].classList.remove("active");
+        } else {
+          allTxt[index].classList.add("active");
+          item.classList.add("active");
+        }
+      });
     }
+  });
+}
+toggleFrequently();
+
+//fire select box
+
+if (
+  document.querySelector(
+    ".saveTime__estimate--formTwo--inputGroup--input.select"
+  )
+) {
+  $(document).ready(function () {
+    $(".saveTime__estimate--formTwo--inputGroup--input.select").niceSelect();
+  });
+}
+
+function getValuePlan(){
+  
+  window.addEventListener("load", () => {
+   
+    document.querySelectorAll(".list li").forEach((item) => {
+     if(item.classList.contains("selected")){
+      plan = +item.getAttribute("data-value")
+     }
+    //  console.log(item.getAttribute("class","selected"))
+
+      item.addEventListener("click", () => {
+        
+        plan = +item.getAttribute("data-value")
+        
+      });
+    });
+  });
+  return plan
+}
+getValuePlan()
+
+
+
+function calculateSaving() {
+  let data = {
+    livingTraing: false,
+    DewdroppersTraining: false,
+    staffRate: false,
+    noOfStaff: false,
+    noOfCamapign: false,
+  };
+
+
+  const keysData = Object.keys(data);
+  let error;
+  function fillingError(erorrTxt){
+    errorForm.textContent = erorrTxt
+  }
+  function activeSavingResult(){
+    savingResulInput.classList.add('active')
+    
+  }
+
+  allInputs.forEach((item, index) => {
+    item.addEventListener("keyup", () => {
+      for (let i = 0; i < allInputs.length; i++) {
+        if (index === i) {
+          if (!isNaN(item.value) && item.value.trim().length !== 0) {
+            data[keysData[i]] = +item.value;
+            allParent[index].classList.add("right");
+            allParent[index].classList.remove("wrong");
+          } else {
+            data[keysData[i]] = false;
+            allParent[index].classList.add("wrong");
+            allParent[index].classList.remove("right");
+          }
+        }
+      }
+      if(data.livingTraing < data.DewdroppersTraining){
+        
+        fillingError("Live Training should be greater than Dewdroppers Training")
+      }else {
+        fillingError("")
+      }
+
+      if (
+        data.livingTraing !== false &&
+        data.DewdroppersTraining !== false &&
+        data.staffRate !== false &&
+        data.noOfStaff !== false &&
+        data.noOfCamapign !== false && 
+        data.livingTraing > data.DewdroppersTraining
+      ) {
+        error = false;
+      } else {
+        error = true;
+      }
+      if (error) {
+        calcButton.classList.remove('active')
+        calcButton.setAttribute('disabled',true)
+        savingResulInput.setAttribute('placeholder',"0000")
+      }else {
+        calcButton.classList.add('active')
+        calcButton.removeAttribute('disabled')
+        
+      }
+    });
+  
+  });
+  calcButton.addEventListener('click',()=>{
+
+    const slotOne = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign
+    if(slotOne<plan){
+      error = true
+      fillingError("Please Review equivalent Plan")
+     
+      
+    }else {
+      savingResult = ((data.livingTraing - data.DewdroppersTraining) * data.staffRate) * data.noOfStaff * data.noOfCamapign - plan
+      savingResulInput.setAttribute("placeholder",savingResult)
+      activeSavingResult()
+    }
+
+  
+   /*
+    console.log(typeof data.livingTraing)
+    console.log(typeof data.DewdroppersTraining)
+    console.log(typeof data.staffRate)
+    console.log(typeof data.noOfStaff)
+    console.log(typeof data.noOfCamapign)
+    console.log(typeof plan)
+    */
+console.log(savingResult)
   })
 }
-toggleFrequently()
+calculateSaving();

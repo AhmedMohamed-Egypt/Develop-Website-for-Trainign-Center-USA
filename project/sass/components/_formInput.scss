@@ -7,6 +7,12 @@
     display: flex;
     align-items: flex-end;
     width: 48%;
+    &.right{
+        border: 1px solid rgb(61, 119, 61);
+    }
+    &.wrong{
+        border: 1px solid #f00;
+    }
     
     &--input{
         border: none;
@@ -18,6 +24,22 @@
         padding-bottom: 10px;
         padding-top: 20px;
         padding-left: 30px;
+      
+        &.select{
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0;
+            padding-left: 25px;
+            .list{
+                width: 100%;
+               
+            }
+            .current{
+                width: 100%;
+                display: block;
+            }
+        }
         &::placeholder{
             font-size: 25px;
             color: #000;
