@@ -296,10 +296,7 @@ function calculateSaving() {
   function activeSavingResult() {
     savingResulInput.classList.add("active");
   }
-  
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-}
+
 
 
   allInputs.forEach((item, index) => {
@@ -360,11 +357,11 @@ function calculateSaving() {
         fillingError("Please Review equivalent Plan");
       } else {
         fillingError("");
-        savingResult = numberWithCommas((data.livingTraing - data.DewdroppersTraining) *
+        savingResult = (data.livingTraing - data.DewdroppersTraining) *
         data.staffRate *
         data.noOfStaff *
         data.noOfCamapign -
-      plan)
+      plan
          
         savingResulInput.setAttribute("placeholder", savingResult);
         activeSavingResult();
