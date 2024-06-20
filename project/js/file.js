@@ -358,11 +358,11 @@ function calculateSaving() {
         fillingError("Please Review equivalent Plan");
       } else {
         fillingError("");
-        savingResult =numberWithCommas( (data.livingTraing - data.DewdroppersTraining) *
+        savingResult = (data.livingTraing - data.DewdroppersTraining) *
         data.staffRate *
         data.noOfStaff *
         data.noOfCamapign -
-      plan)
+      plan
          
         savingResulInput.setAttribute("placeholder", savingResult);
         activeSavingResult();
