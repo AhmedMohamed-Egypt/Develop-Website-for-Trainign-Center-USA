@@ -1,4 +1,7 @@
 
+let plan;
+let savingResult;
+let error;
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
@@ -260,8 +263,7 @@ if (
     $(".saveTime__estimate--formTwo--inputGroup--input.select").niceSelect();
   });
 }
-let plan;
-let savingResult;
+
 function getValuePlan() {
   window.addEventListener("load", () => {
     document.querySelectorAll(".list li").forEach((item) => {
@@ -289,7 +291,7 @@ function calculateSaving() {
   };
 
   const keysData = Object.keys(data);
-  let error;
+  
   function fillingError(erorrTxt) {
     errorForm.textContent = erorrTxt;
   }
@@ -370,3 +372,15 @@ function calculateSaving() {
   }
 }
 calculateSaving();
+//distibute popup
+
+function distributePop(){
+  const allPops = document.querySelectorAll(".saveTime__estimate--formTwo--inputGroup--popup")
+  allPops.forEach((item)=>{
+    if(item){
+      console.log(item.clientHeight + 20 )
+      item.style.top = -(item.clientHeight+10)+"px"
+    }
+  })
+}
+distributePop()
