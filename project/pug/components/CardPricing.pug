@@ -1,4 +1,5 @@
 - var items = [{title:"startup",price:36,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 25 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"local",price:72,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 100 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"regional",price:156,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 100 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"National",price:240,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 25 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"}]
+- var usage = ['Forms','Monthly Submission','Signed Documents','Submission Srorage','Payment submission','Api']
 mixin cardPricing(classCard,title,price,desc,list,cta)
  div(class=`cardpricing d-flex align-items-center flex-column radius-12 ${classCard}`) 
   h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__title")=title
@@ -13,10 +14,24 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
      span(class="cardpricing__list--dot mrt-10")
      span(class="deepgreen size-18 font-outfit weight-500 ")=val
   a(href="#" class="customBtn choosePlan")=cta
- 
+mixin minicard(title,desc)
+ div 
+  h3=title 
+  p=desc
+mixin cardEnterprise()
+ div(class="cardpricing d-flex align-items-center flex-column radius-12")
+  h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__title") Enterprise
+  div
+   h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__price") Custom Price
+   a(href="#" class="btn customBtn cardpricing__getAqoute") Get a Qoute
+  h3 Unlimited Usage 
+   ul 
+    each val in usage
+     li=val 
+   +minincard('Multiuser Platoform','Multiple Teams and users') 
+
 .swiper.pdb-50
   .swiper-wrapper 
    each val,index in items 
     .swiper-slide()
      +cardPricing(`${(index===3?"promote":"")}`,val.title,val.price,val.desc,val.listPricing,val.cta)
-    

@@ -14,8 +14,8 @@
 
              }
              @include max(768px){
-               height: 500px;
-               overflow-y: scroll;
+//height: 500px;
+            //   overflow-y: scroll;
                padding-bottom: 50px;
                 
              }
@@ -31,9 +31,12 @@
         }
     }
     &__bottomfooter{
-        position: absolute;
-        width: 100%;
-        bottom: 0;
+        
+        @include min(770px){
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
     }
    
   
