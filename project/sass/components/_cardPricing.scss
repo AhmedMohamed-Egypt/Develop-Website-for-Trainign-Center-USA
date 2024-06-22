@@ -9,15 +9,58 @@
     height: 650px;
     &__Enterprise{
        
-        background-color: #6990def0;
+        background-color: #3572EF;
         padding: 0;
         color: $white;
         border: none;
+        
+        &::after{
+            @include after();
+            background-color: #c981a8;
+            border-radius: 12px;
+            z-index: -1;
+            -webkit-transform: translate(10px, 10px);
+            -ms-transform: translate(10px, 10px);
+            transform: translate(10px, 10px);
+            display: none;
+        }
+        h3{
+            padding: 10px 0;
+            font-style: italic;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+                position: relative;
+                padding-left: 20px;
+                &::after{
+                    @include after();
+                    background-size: cover;
+                    width: 20px;
+                    height: 20px;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' width='30px' height='30px'%3E%3Cpath d='M 26.980469 5.9902344 A 1.0001 1.0001 0 0 0 26.292969 6.2929688 L 11 21.585938 L 4.7070312 15.292969 A 1.0001 1.0001 0 1 0 3.2929688 16.707031 L 10.292969 23.707031 A 1.0001 1.0001 0 0 0 11.707031 23.707031 L 27.707031 7.7070312 A 1.0001 1.0001 0 0 0 26.980469 5.9902344 z' fill='%23fff'/%3E%3C/svg%3E");
+                    left: -10px;
+                }
+            }
+        }
+        .cardpricing__getAqoute{
+            width: 180px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px 0;
+            margin-top: 15px;
+            background-color: #102C57 !important;
+        }
+        &--getAqoute{
+            background-color: #10439F;
+            padding: 15px 0;
+        }
        .cardpricing__title{
-        background-color: #4d6fb2;
+        background-color: #102C57;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
             border: none;
+            margin-bottom: 0;
         }
     }
     &.promote{

@@ -161,7 +161,10 @@ function swiperPricingPage() {
         },
         // when window width is >= 640px
         1200: {
-          slidesPerView: 5,
+          slidesPerView: 3,
+        },
+        1500: {
+          slidesPerView: 4,
         },
       },
       navigation: {
