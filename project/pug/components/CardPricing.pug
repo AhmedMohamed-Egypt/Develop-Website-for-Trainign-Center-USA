@@ -14,24 +14,29 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
      span(class="cardpricing__list--dot mrt-10")
      span(class="deepgreen size-18 font-outfit weight-500 ")=val
   a(href="#" class="customBtn choosePlan")=cta
-mixin minicard(title,desc)
+mixin minicard(titleCard,descCard)
  div 
-  h3=title 
-  p=desc
+   h3=titleCard
+   p=descCard
 mixin cardEnterprise()
- div(class="cardpricing d-flex align-items-center flex-column radius-12")
+ div(class="cardpricing d-flex align-items-center flex-column radius-12 cardpricing__Enterprise")
   h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__title") Enterprise
-  div
+  div(class="w-100 d-flex flex-column align-items-center")
    h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__price") Custom Price
-   a(href="#" class="btn customBtn cardpricing__getAqoute") Get a Qoute
+   a(href="#" class="btn customBtn cardpricing__getAqoute ") Get a Qoute
   h3 Unlimited Usage 
-   ul 
+  ul 
     each val in usage
      li=val 
-   +minincard('Multiuser Platoform','Multiple Teams and users') 
+  +minicard('Multiuser Platform','Multiple Teams and users') 
+  +minicard('Dedicated Support','Priority Real-Time Support')  
+  +minicard('User Management','User Access Control') 
+   
 
 .swiper.pdb-50
   .swiper-wrapper 
    each val,index in items 
     .swiper-slide()
      +cardPricing(`${(index===3?"promote":"")}`,val.title,val.price,val.desc,val.listPricing,val.cta)
+   .swiper-slide()
+     +cardEnterprise()

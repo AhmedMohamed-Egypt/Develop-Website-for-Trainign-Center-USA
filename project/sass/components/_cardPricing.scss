@@ -7,6 +7,19 @@
  //   padding-bottom: 30px;
     position: relative;
     height: 650px;
+    &__Enterprise{
+       
+        background-color: #6990def0;
+        padding: 0;
+        color: $white;
+        border: none;
+       .cardpricing__title{
+        background-color: #4d6fb2;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border: none;
+        }
+    }
     &.promote{
         background-color: $white;
         border-color: $pink;

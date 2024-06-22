@@ -161,7 +161,7 @@ function swiperPricingPage() {
         },
         // when window width is >= 640px
         1200: {
-          slidesPerView: 4,
+          slidesPerView: 5,
         },
       },
       navigation: {
@@ -261,6 +261,17 @@ if (
 ) {
   $(document).ready(function () {
     $(".saveTime__estimate--formTwo--inputGroup--input.select").niceSelect();
+  });
+}
+//scrolling to calculator 
+
+function scrollingCalculator(){
+  const saveTimeSection = document.querySelector(".saveTime")
+   
+  window.scroll({
+    top: saveTimeSection.offsetTop,
+    
+    behavior: "smooth",
   });
 }
 
@@ -368,6 +379,7 @@ function calculateSaving() {
        // savingResulInput.setAttribute("placeholder", savingResult);
        savingResulInput.value = savingResult
       }
+      scrollingCalculator()
     });
   }
 }
@@ -384,3 +396,4 @@ function distributePop(){
   })
 }
 distributePop()
+
