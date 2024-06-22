@@ -7,6 +7,9 @@
  //   padding-bottom: 30px;
     position: relative;
     height: 650px;
+    @include max(500px){
+        height: 600px;
+    }
     &__Enterprise{
        
         background-color: #3572EF;
@@ -108,6 +111,13 @@ margin-bottom: 15px;
     &__list{
         margin-bottom: 60px;
         margin-top: 20px;
+        li{
+            span{
+                @include max(500px){
+                    font-size: 16px;
+                }
+            }
+        }
         &--dot{
             display: inline-block;
             min-width:  5px;

@@ -2,6 +2,13 @@
 
 .pricingPage{
     &__container{
+        .h2Heading {
+            @include max(450px){
+                font-size: 32px !important;
+                width: 90%;
+                margin: auto;
+            }
+        }
         &--toggleBtns{
             border: 1px solid $lightPink;
             border-radius: 80px;
