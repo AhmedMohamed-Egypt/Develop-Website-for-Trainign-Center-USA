@@ -94,6 +94,9 @@ padding-top: 150px;
                     max-width: 250px;
                     text-align: center;
                     font-size: 45px;
+                    &::placeholder{
+                        opacity: 0;
+                    }
                     /*
                     &.active{
                         &::-webkit-input-placeholder{
