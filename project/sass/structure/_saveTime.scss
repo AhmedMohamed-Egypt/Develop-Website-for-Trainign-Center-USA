@@ -69,6 +69,7 @@ padding-top: 150px;
                 margin-right: 5px;
             }
             &--input{
+                background: none;
                 font-family: "Outfit", sans-serif;
                 font-size: 35px;
                 color: $black;
@@ -78,13 +79,13 @@ padding-top: 150px;
                 border:none !important;
                 display: block;
                 padding-top: 20px;
-                background: none;
+              
                 transform: translateY(5px);
                 padding-left: 10px;
                 &::placeholder{
                     font-family: "Outfit", sans-serif;
                     font-size: 55px;
-                    color: $scndryGrey;
+                  //  color: $scndryGrey;
                     color: $black;
                     
                 }
@@ -93,6 +94,7 @@ padding-top: 150px;
                     max-width: 250px;
                     text-align: center;
                     font-size: 45px;
+                    /*
                     &.active{
                         &::-webkit-input-placeholder{
                             color: $black !important;
@@ -101,6 +103,7 @@ padding-top: 150px;
                             color: $black !important;
                         }
                     }
+                    */
                 }
             }
         }
