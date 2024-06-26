@@ -240,8 +240,21 @@ function addClassPage() {
 
   if (arrayClasses.toString().indexOf("pricingPage") > -1) {
     document.body.classList.add("pricing");
-  } else {
+  } else  {
     document.body.classList.remove("pricing");
+  }
+  if(arrayClasses.toString().indexOf('aboutPage')>-1){
+    const txtAbout = document.querySelector('.aboutPage__sectionOne--leftside--txt')
+   // txtAbout.style.maxHeight= window.innerHeight + "px"
+   const wHeight = window.innerHeight
+   const txtHeight = txtAbout.clientHeight
+   const protionHeight = (wHeight*50) / 100
+   txtAbout.style.height = (wHeight*90) / 100 + "px"
+   if(txtHeight > protionHeight) {
+    document.body.classList.add('adjutment')
+   }else {
+    document.body.classList.remove('adjutment')
+   }
   }
   //document.body.children.map((item)=>console.log(item))
 }

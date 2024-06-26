@@ -1,3 +1,8 @@
+body.adjutment{
+    .aboutPage__bottomfooter{
+        position: static;
+    }
+}
 .aboutPage{
     &__sectionOne{
         @include max(992px){
@@ -9,8 +14,9 @@
         &--leftside{
             &--txt{
              max-width: 85%;
-             min-height: 700px;
-             overflow-y: scroll;
+             padding: 75px 0;
+           //  min-height: 700px;
+           //  overflow-y: scroll;
              @include max(992px){
                 max-width: 100%;
 
@@ -33,9 +39,9 @@
         }
     }
     &__bottomfooter{
-        
+        position: fixed;
         @include min(770px){
-            position: fixed;
+            
             width: 100%;
             bottom: 0;
         }
