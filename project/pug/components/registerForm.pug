@@ -7,16 +7,7 @@ mixin registerPersonal(className)
  div(class=className)
   div 
    p(class="font-popinos size-17 weight-500") Register User 
-  div 
-   input(type="text" placeholder="First Name")
-  div 
-   input(type="text" placeholder="Last Name")
-  div 
-   input(type="text" placeholder="Email")
-  div 
-   input(type="password" placeholder="password")
-  div 
-   input(type="password" placeholder="Password")
+  include ./userInfo.pug
   div(class="pointer")
    input(type="checkbox" id="terms")
    label(for="terms" ) Accept Terms

@@ -1,8 +1,10 @@
-%common{
-  
+%commonBody{
+  position: fixed;
+  width: 100%;
 }
 
 body.modalnOpenPlan{
+  @extend %commonBody;
 .modalRegister{
   opacity: 1;
   z-index: 999999999999999;
@@ -13,7 +15,7 @@ body.modalnOpenPlan{
 }
 body.modalOpen {
  
-
+  @extend %commonBody;
   .modalSignUp {
     opacity: 1;
     z-index: 999999999999999;

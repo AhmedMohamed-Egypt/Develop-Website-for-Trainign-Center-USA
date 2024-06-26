@@ -63,8 +63,15 @@
         left: 0;
         width: 100%;
         height: 100%;
+        .cardpricing {
+           height: auto;
+        }
+        .cardpricing__Enterprise--getAqoute{
+         border-bottom-left-radius: 12px;
+         border-bottom-right-radius: 12px;
+        }
         &__container{
-            div{
+            >div{
                
                 width: 90%;
                 margin: auto;
@@ -80,7 +87,7 @@
         }
     }
     &__company{
-      
+     
         &__container{
             &--next{
                 width: 100%;
@@ -97,12 +104,18 @@
                     height: 2px;
                     position: relative;
                     background-color: #686D76;
+                    &.active{
+                        &::before{
+                            width: 100%;
+                        }
+                    }
                     &::before{
                         @include before();
                         background-color: #f00;
                         
                         top: 0px;
                         width: 0;
+                        transition: .25s;
                        
                     }
 
@@ -142,6 +155,9 @@
             }
             .companysteps{
                 display: none;
+                >div{
+                    margin-bottom: 15px;
+                }
                 &.active{
                     display: block;
                 }

@@ -1,11 +1,11 @@
 .registerForm__company__container 
  div 
    p(class="font-popinos size-17 weight-500 ") Register Copmany
- div(class="registerForm__company__container--steps")
+ div(class="registerForm__company__container--steps ")
   span 
   span 
   span 
- div(class="registerCompany__companyInfo companysteps")
+ div(class="registerCompany__companyInfo companysteps active")
   p(class="font-popinos size-17 weight-500 mrb-15") Tell Us about your Company 
   div 
    input(type="text" placeholder="Company Name")
@@ -16,5 +16,8 @@
   div 
    input(type="text" placeholder="Total Number of Staff")
  div(class="registerCompany__companyUser companysteps")
+  include ./userInfo.pug
+ div(class="registerCompany__cards companysteps")
+  include ./registerCompanyCards.pug
  div(class="")
    button(class="btn customBtn registerForm__company__container--next") Next

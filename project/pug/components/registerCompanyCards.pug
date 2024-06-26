@@ -1,0 +1,35 @@
+- var items = [{title:"startup",price:36,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 25 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"local",price:72,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 100 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"regional",price:156,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 100 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"},{title:"National",price:240,desc:"Monthly price based on 6 month subscription",listPricing:['2 Company Courses','Free Brand Ambassador Certification Course','Certification And Documentation Organization','Management of Up to 25 Staff','Inventory Management','Training Quality Control Through Testing','Optional Purchase of Industry Training Courses'],cta:"Choose Plan"}]
+- var usage = ['Unlimited Training','Unlimited Inventory','Unlimited Documents','Customize Branding & Domain','MultiUser Platoform','Api Integration']
+mixin cardPricing(classCard,title,price,desc,list,cta)
+ div(class=`cardpricing d-flex align-items-center flex-column radius-12 ${classCard}`) 
+  h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__title")=title
+  h3(class="font-outfit deepdrkblue size-46 weight-400 cardpricing__price")
+   span(class="weight-700 size-20 d-inline-block  cardpricing__price--sign") $
+   span(class="cardpricing__price--value")=price
+   span(class="deepgreen size-18 font-outfit weight-700") /Mon
+  p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc")=desc 
+  
+  
+mixin minicard(titleCard,descCard)
+ div 
+   h3=titleCard
+   p=descCard
+mixin cardEnterprise()
+ div(class="cardpricing d-flex align-items-center flex-column radius-12 cardpricing__Enterprise")
+  h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__title") Enterprise
+  div(class="w-100 d-flex flex-column align-items-center cardpricing__Enterprise--getAqoute")
+   h2(class="font-outfit weight-500 size-30 capiliatize cardpricing__price") Custom Price
+   a(href="#" class="btn customBtn cardpricing__getAqoute ") Get a Qoute
+ 
+   
+
+.swiper.pdb-50
+  .swiper-wrapper 
+   each val,index in items 
+    .swiper-slide()
+     +cardPricing(`${(index===3?"promote":"")}`,val.title,val.price,val.desc,val.listPricing,val.cta)
+   .swiper-slide()
+     +cardEnterprise()
+.pagination.position-relative
+    .swiper-button-prev
+    .swiper-button-next
