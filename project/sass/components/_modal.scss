@@ -1,3 +1,16 @@
+%common{
+  
+}
+
+body.modalnOpenPlan{
+.modalRegister{
+  opacity: 1;
+  z-index: 999999999999999;
+  &__content{
+      opacity: 1;
+  }
+}
+}
 body.modalOpen {
  
 
@@ -10,7 +23,7 @@ body.modalOpen {
   }
 }
 
-.modalSignUp {
+.modalSignUp,.modalRegister {
   position: fixed;
   top: 0;
   left: 0;
@@ -159,6 +172,30 @@ body.modalOpen {
     cursor: pointer;
     @include max(1440px){
       top: 30px;
+    }
+  }
+}
+.modalRegister{
+  .modalRegister__content__container{
+    width: 100%;
+  }
+  .modalRegister__closeBtn{
+    left: auto;
+    right: 20px;
+    top: 10px;
+  }
+  &__backBtn{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    cursor: pointer;
+    opacity: 0;
+    transition: .25s;
+    &.active{
+      opacity: 1;
+    }
+    img{
+      width: 25px;
     }
   }
 }

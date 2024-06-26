@@ -1,0 +1,35 @@
+mixin radio(forId,name,className)
+ div(class=className)
+   input(type="radio" id=`${forId}` name=name)
+   label(for=`${forId}`)=forId
+
+mixin registerPersonal(className)
+ div(class=className)
+  div 
+   p(class="font-popinos size-17 weight-500") Register User 
+  div 
+   input(type="text" placeholder="First Name")
+  div 
+   input(type="text" placeholder="Last Name")
+  div 
+   input(type="text" placeholder="Email")
+  div 
+   input(type="password" placeholder="password")
+  div 
+   input(type="password" placeholder="Password")
+  div(class="pointer")
+   label(for="terms" ) Accept Terms
+   input(type="checkbox" id="terms")
+  div 
+   button(type="submit" class="btn customBtn w-100") Sign Up
+
+
+div(class='registerForm')
+ form
+  div(class="registerForm__selectors d-flex align-items-center justify-content-center")
+   +radio('company','identitiy')
+   +radio('personal','identitiy','mrl-10')
+  div(class="registerForm__personal")
+   +registerPersonal('registerForm__personal__container pdt-30')
+  div(class="registerForm__company")
+  

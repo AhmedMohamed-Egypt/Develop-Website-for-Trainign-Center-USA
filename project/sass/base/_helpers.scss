@@ -110,6 +110,19 @@ button{
 .w-100{
     width: 100%;
 }
+input{
+    border: none;
+    background: none;
+    border: 1px solid $grey;
+    padding: 10px 5px;
+    &:focus{
+        outline: 0 !important;
+       // border: none !important;
+    }
+}
+.pointer{
+    cursor: pointer;
+}
 /*helpers for sections*/
 
 .margin-left-auto{

@@ -400,3 +400,46 @@ function distributePop(){
 }
 distributePop()
 
+//Register Form 
+
+let activePersonal=false;
+let activeCompany = false
+const radioInput = document.querySelectorAll(".registerForm__selectors input")
+const personalWidget = document.querySelector('.registerForm__personal')
+const companyWidget = document.querySelector('.registerForm__company')
+const selectorsIdentity = document.querySelector(".registerForm__selectors")
+
+function hideSelectors(){
+  selectorsIdentity.classList.add('hide')
+}
+function showActiveIdintity(persoanlParam,companyParam){
+ if(persoanlParam){
+  personalWidget.classList.add('active')
+  companyWidget.classList.remove('active')
+ 
+ } 
+  if(companyParam) {
+    companyWidget.classList.add('active')
+    personalWidget.classList.remove('active')
+    
+  }
+}
+function togglePersonalCompany(){
+   radioInput.forEach((item)=>{
+    item.addEventListener('click',()=>{
+      hideSelectors()
+      if(item.getAttribute('id')=='personal'){
+        activePersonal = true
+        activeCompany = false
+      }else {
+        activeCompany = true
+        activePersonal = true
+      }
+      showActiveIdintity(activePersonal,activeCompany)
+
+    })
+   })
+    
+  
+}
+togglePersonalCompany()

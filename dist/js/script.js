@@ -14,8 +14,11 @@ const calcButton = document.querySelector(
   ".saveTime__estimate--formTwo button"
 );
 const signUpBtn = document.querySelectorAll(".signBtn");
+const allChoosePlan = document.querySelectorAll(".choosePlan")
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
-
+const closeBtnModalRegister = document.querySelector(".modalRegister__closeBtn");
+const backButtonRegister = document.querySelector(".modalRegister__backBtn")
+let stepsRegister = 0
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
@@ -111,6 +114,7 @@ function fireModal(btn, closeBtn, classModal) {
 }
 
 fireModal(signUpBtn, closeBtnModal, "modalOpen");
+fireModal(allChoosePlan, closeBtnModalRegister, "modalnOpenPlan");
 
 //Activate class on navbar
 
@@ -400,3 +404,71 @@ function distributePop(){
 }
 distributePop()
 
+//Register Form 
+
+let activePersonal=false;
+let activeCompany = false
+const radioInput = document.querySelectorAll(".registerForm__selectors input")
+const personalWidget = document.querySelector('.registerForm__personal')
+const companyWidget = document.querySelector('.registerForm__company')
+const selectorsIdentity = document.querySelector(".registerForm__selectors")
+
+function hideSelectors(){
+  selectorsIdentity.classList.add('hide')
+}
+function showActiveIdintity(persoanlParam,companyParam){
+ if(persoanlParam){
+  personalWidget.classList.add('active')
+  companyWidget.classList.remove('active')
+ 
+ } 
+  if(companyParam) {
+    companyWidget.classList.add('active')
+    personalWidget.classList.remove('active')
+    
+  }
+}
+function togglePersonalCompany(){
+   radioInput.forEach((item)=>{
+    item.addEventListener('click',()=>{
+      
+      hideSelectors()
+      stepsRegister++
+      if(item.getAttribute('id')=='personal'){
+        activePersonal = true
+        activeCompany = false
+      }else {
+        activeCompany = true
+        activePersonal = true
+      }
+      showActiveIdintity(activePersonal,activeCompany)
+       backButton()
+    })
+   })
+    
+  
+}
+togglePersonalCompany()
+
+
+
+function backButton(){
+  
+  if(stepsRegister>0){
+    backButtonRegister.classList.add('active')
+  }else {
+    backButtonRegister.classList.remove('active')
+   
+
+  }
+  backButtonRegister.addEventListener('click',()=>{
+   personalWidget.classList.remove('active')
+   companyWidget.classList.remove('active')
+   selectorsIdentity.classList.remove('hide')
+   backButtonRegister.classList.remove('active')
+   activeCompany=false
+   activePersonal=false
+    
+  })
+}
+backButton()
