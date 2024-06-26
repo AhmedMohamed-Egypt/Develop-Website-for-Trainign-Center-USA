@@ -1,6 +1,7 @@
 let plan;
 let savingResult;
 let error;
+let resetBackProgress;
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
 const allInputs = document.querySelectorAll(
@@ -112,6 +113,8 @@ function fireModal(btn, closeBtn, classModal) {
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       document.body.classList.remove(classModal);
+      resetBackProgress()
+
     });
   }
 }
@@ -489,6 +492,34 @@ const allComapnies = document.querySelectorAll(".companysteps");
 const allSpanSteps = document.querySelectorAll(
   ".registerForm__company__container--steps span"
 );
+function removeAllClas(list){
+  list.forEach((item)=>{
+    item.classList.remove('active')
+   })
+}
+ resetBackProgress=()=>{
+ activePersonal = false;
+activeCompany = false;
+step = 0;
+ stepSpan = -1;
+ selectCompany = true;
+ selectorsIdentity.classList.remove("hide");
+ backButtonRegister.classList.remove('active')
+ personalWidget.classList.remove('active')
+ companyWidget.classList.remove('active')
+ registerForm.classList.remove('active')
+ removeAllClas(allSpanSteps)
+ //removeAllClas(allComapnies)
+ allComapnies.forEach((item,index)=>{
+  if(index>0){
+    item.classList.remove('active')
+  }else {
+    item.classList.add('active')
+  }
+ })
+ 
+}
+
 function activeSlide() {
   for (let i = 0; i < allComapnies.length; i++) {
     allComapnies[i].classList.remove("active");
