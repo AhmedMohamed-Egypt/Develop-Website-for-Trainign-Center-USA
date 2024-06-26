@@ -97,6 +97,24 @@
         
       
     }
+    &__selectPlan{
+        position: static;
+        margin: 15px 0;
+        &--label{
+            width: 180px;
+            display: block;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        &--input{
+         display: none;
+         &:checked~label{
+            background-color:#24a232 !important
+         }
+        }
+    }
     &__title{
 width: 100%;
 text-align: center;

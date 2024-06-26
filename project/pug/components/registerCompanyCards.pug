@@ -8,7 +8,10 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
    span(class="cardpricing__price--value")=price
    span(class="deepgreen size-18 font-outfit weight-700") /Mon
   p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc")=desc 
-  
+  div(class="cardpricing__selectPlan")
+   input(type="radio" class="cardpricing__selectPlan--input" id=`${title}` value=`${price}` name="plan")
+   label(for=`${title}` class="cardpricing__selectPlan--label customBtn")=title
+   
   
 mixin minicard(titleCard,descCard)
  div 
