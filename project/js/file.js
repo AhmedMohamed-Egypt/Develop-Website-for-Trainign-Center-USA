@@ -490,25 +490,12 @@ const allSpanSteps = document.querySelectorAll(
   ".registerForm__company__container--steps span"
 );
 function activeSlide() {
-  allComapnies.forEach((item, index) => {
+  for (let i = 0; i < allComapnies.length; i++) {
+    allComapnies[i].classList.remove("active");
+  }
+  if (allComapnies[step]) allComapnies[step].classList.add("active");
+}
 
-    if (index === step) {
-    item.classList.add("active")
-    }else {
-      item.classList.remove("active")
-    }
-    
-  });
-}
-function removeActiveSlide(){
-  allComapnies.forEach((item, index) => {
-  
-    if (index === step) {
-    item.classList.remove("active")
-    }
-    
-  });
-}
 function progressSpan() {
   allSpanSteps.forEach((item, index) => {
     if (index === stepSpan) {
@@ -559,7 +546,7 @@ function backButton() {
   }
 
   backButtonRegister.addEventListener("click", () => {
-    if (!selectCompany) {
+    if (!selectCompany || step === 0) {
       personalWidget.classList.remove("active");
       companyWidget.classList.remove("active");
       selectorsIdentity.classList.remove("hide");
@@ -568,13 +555,16 @@ function backButton() {
       activeCompany = false;
       activePersonal = false;
     } else {
-      if (stepSpan >= 0 || step>=1) {
+      if (stepSpan >= 0) {
         stepSpan--;
-        step--
       }
-      
+      if (step >= 0) {
+        step--;
+      }
 
-      removeActiveSlide()
+      console.log(step)
+
+      activeSlide();
       progressSpan();
     }
   });
@@ -589,7 +579,7 @@ function compnayFlow() {
       stepSpan++;
       activeSlide();
       progressSpan();
-      
+      console.log(step);
     });
   }
 }
