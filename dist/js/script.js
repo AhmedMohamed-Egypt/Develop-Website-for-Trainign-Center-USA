@@ -18,6 +18,7 @@ const allChoosePlan = document.querySelectorAll(".choosePlan")
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
 const closeBtnModalRegister = document.querySelector(".modalRegister__closeBtn");
 const backButtonRegister = document.querySelector(".modalRegister__backBtn")
+const registerForm = document.querySelector(".registerForm")
 let stepsRegister = 0
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
@@ -431,7 +432,7 @@ function showActiveIdintity(persoanlParam,companyParam){
 function togglePersonalCompany(){
    radioInput.forEach((item)=>{
     item.addEventListener('click',()=>{
-      
+      registerForm.classList.add('active')
       hideSelectors()
       stepsRegister++
       if(item.getAttribute('id')=='personal'){
@@ -466,6 +467,7 @@ function backButton(){
    companyWidget.classList.remove('active')
    selectorsIdentity.classList.remove('hide')
    backButtonRegister.classList.remove('active')
+   registerForm.classList.remove('active')
    activeCompany=false
    activePersonal=false
     

@@ -2,9 +2,14 @@
     width: 500px;
     background-color: #F5F7F8;
     border-radius: 14px;
-    height: 500px;
+    height: auto;
     max-width: 90%;
     margin: auto;
+    padding: 20px 0;
+   // max-height: 500px;
+    &.active{
+        height: 500px;
+    }
     form{
         height: 100%;
         position: relative;
