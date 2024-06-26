@@ -482,10 +482,12 @@ function backButton(){
 function compnayFlow(){
   const nextBtn = document.querySelector(".registerForm__company__container--next")
   let step = 0
- 
+ if(nextBtn){
   nextBtn.addEventListener('click',()=>{
     step++
   })
+ }
+ 
 
 }
 compnayFlow()
