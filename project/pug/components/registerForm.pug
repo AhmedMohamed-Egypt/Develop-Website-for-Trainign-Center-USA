@@ -18,8 +18,9 @@ mixin registerPersonal(className)
   div 
    input(type="password" placeholder="Password")
   div(class="pointer")
-   label(for="terms" ) Accept Terms
    input(type="checkbox" id="terms")
+   label(for="terms" ) Accept Terms
+   
   div 
    button(type="submit" class="btn customBtn w-100") Sign Up
 
@@ -32,4 +33,4 @@ div(class='registerForm')
   div(class="registerForm__personal")
    +registerPersonal('registerForm__personal__container pdt-30')
   div(class="registerForm__company")
-  
+   include ./registerCompany.pug
