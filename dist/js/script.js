@@ -21,7 +21,7 @@ const closeBtnModalRegister = document.querySelector(
 const backButtonRegister = document.querySelector(".modalRegister__backBtn");
 const registerForm = document.querySelector(".registerForm");
 const yearlyPrices = document.querySelectorAll(".cardpricing__desc");
-let stepsRegister = 0;
+
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
@@ -496,13 +496,13 @@ function activeSlide() {
   if (allComapnies[step]) allComapnies[step].classList.add("active");
 }
 
-function progressSpan() {
-  allSpanSteps.forEach((item, index) => {
-    if (index === stepSpan) {
-      item.classList.add("active");
-    }
-  });
+function progressSpan(spanParam) {
+  if (allSpanSteps[spanParam]) allSpanSteps[spanParam].classList.add("active");
 }
+function removeProgressSpan(spanParam){
+  if (allSpanSteps[spanParam]) allSpanSteps[spanParam].classList.remove("active");
+}
+
 function hideSelectors() {
   selectorsIdentity.classList.add("hide");
 }
@@ -521,7 +521,7 @@ function togglePersonalCompany() {
     item.addEventListener("click", () => {
       registerForm.classList.add("active");
       hideSelectors();
-      stepsRegister++;
+     
       if (item.getAttribute("id") == "personal") {
         activePersonal = true;
         activeCompany = false;
@@ -532,20 +532,16 @@ function togglePersonalCompany() {
         selectCompany = true;
       }
       showActiveIdintity(activePersonal, activeCompany);
-      backButton();
+      backButtonRegister.classList.add("active");
+      // backButton();
     });
   });
 }
 togglePersonalCompany();
 
 function backButton() {
-  if (stepsRegister > 0) {
-    backButtonRegister.classList.add("active");
-  } else {
-    backButtonRegister.classList.remove("active");
-  }
-
   backButtonRegister.addEventListener("click", () => {
+    
     if (!selectCompany || step === 0) {
       personalWidget.classList.remove("active");
       companyWidget.classList.remove("active");
@@ -557,18 +553,21 @@ function backButton() {
     } else {
       if (stepSpan >= 0) {
         stepSpan--;
+       
       }
+      removeProgressSpan(stepSpan+1);
+     
+
       if (step >= 0) {
         step--;
+        activeSlide();
       }
-
-      console.log(step)
-
-      activeSlide();
-      progressSpan();
     }
+
+    
   });
 }
+backButton();
 function compnayFlow() {
   //activeSlide();
 
@@ -578,7 +577,7 @@ function compnayFlow() {
       step++;
       stepSpan++;
       activeSlide();
-      progressSpan();
+      progressSpan(stepSpan);
       console.log(step);
     });
   }

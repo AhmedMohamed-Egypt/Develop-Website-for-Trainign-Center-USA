@@ -15,7 +15,7 @@
     content: "";
 }
 
-.testmonial,.pricingPage__swiper{
+.testmonial,.pricingPage__swiper,.registerCompany__cards {
     position: relative;
     .swiper {
         padding-bottom: 50px;
@@ -111,5 +111,29 @@ bottom: auto;
   &::after{
     @extend %common;
 }
+}
+}
+.registerCompany__cards{
+.pagination {
+    top: 0;
+    .swiper-button-next{
+        right: -20px;
+        @include max(500px){
+            right: -10px;
+        
+        }
+        &::after{
+            @extend %common;
+        }
+    }
+    .swiper-button-prev{
+      left: -20px;
+      @include max(500px){
+        left: -10px;
+    }
+      &::after{
+        @extend %common;
+    }
+    }
 }
 }
