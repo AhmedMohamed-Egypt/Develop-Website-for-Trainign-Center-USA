@@ -9,6 +9,8 @@
         &--leftside{
             &--txt{
              max-width: 85%;
+             min-height: 500px;
+             overflow: scroll;
              @include max(992px){
                 max-width: 100%;
 
@@ -33,7 +35,7 @@
     &__bottomfooter{
         
         @include min(770px){
-            position: absolute;
+            position: fixed;
             width: 100%;
             bottom: 0;
         }

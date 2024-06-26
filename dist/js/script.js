@@ -481,12 +481,30 @@ function backButton(){
 }
 function compnayFlow(){
   const nextBtn = document.querySelector(".registerForm__company__container--next")
+  const allComapnies = document.querySelectorAll(".companysteps")
   let step = 0
+  function activeSlide(){
+    allComapnies.forEach((item,index)=>{
+  
+      if(index===step){
+        item.classList.add('active')
+      }else {
+        item.classList.remove('active')
+      }
+     })
+  }
+  activeSlide()
+  
  if(nextBtn){
-  nextBtn.addEventListener('click',()=>{
+  nextBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
     step++
+    activeSlide()
   })
+ 
  }
+
+ console.log(step)
  
 
 }

@@ -140,6 +140,12 @@
                     
                 }
             }
+            .companysteps{
+                display: none;
+                &.active{
+                    display: block;
+                }
+            }
         }
     }
 }
