@@ -185,7 +185,7 @@ swiperPricingPage();
 //toggle Button
 
 function toggleBtns() {
-  const fixedPrice = [30, 60, 130, 200];
+  const fixedPrice = [30, 60, 130, 220];
   const toggleBtns = document.querySelectorAll(
     ".pricingPage__container--toggleBtns button"
   );
