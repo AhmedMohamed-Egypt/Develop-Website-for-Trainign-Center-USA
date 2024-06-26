@@ -9,8 +9,8 @@
         &--leftside{
             &--txt{
              max-width: 85%;
-             min-height: 500px;
-             overflow: scroll;
+             min-height: 700px;
+             overflow-y: scroll;
              @include max(992px){
                 max-width: 100%;
 
