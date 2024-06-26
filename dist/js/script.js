@@ -14,8 +14,13 @@ const calcButton = document.querySelector(
   ".saveTime__estimate--formTwo button"
 );
 const signUpBtn = document.querySelectorAll(".signBtn");
+const allChoosePlan = document.querySelectorAll(".choosePlan")
 const closeBtnModal = document.querySelector(".modalSignUp__closeBtn");
-
+const closeBtnModalRegister = document.querySelector(".modalRegister__closeBtn");
+const backButtonRegister = document.querySelector(".modalRegister__backBtn")
+const registerForm = document.querySelector(".registerForm")
+const yearlyPrices = document.querySelectorAll(".cardpricing__desc")
+let stepsRegister = 0
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
@@ -111,6 +116,7 @@ function fireModal(btn, closeBtn, classModal) {
 }
 
 fireModal(signUpBtn, closeBtnModal, "modalOpen");
+fireModal(allChoosePlan, closeBtnModalRegister, "modalnOpenPlan");
 
 //Activate class on navbar
 
@@ -183,8 +189,9 @@ function toggleBtns() {
   const toggleBtns = document.querySelectorAll(
     ".pricingPage__container--toggleBtns button"
   );
-
-  const priceYearly = document.querySelectorAll(".cardpricing__desc")
+  const subscription = document.querySelector(
+    ".pricingPage__container--subscription"
+  );
   const allPrices = document.querySelectorAll(".cardpricing__price--value");
   function fillPrices(prices) {
     allPrices.forEach((item, index) => {
@@ -202,15 +209,14 @@ function toggleBtns() {
         item.classList.add("active");
         
         if (index === 1) {
-         priceYearly.forEach((item)=>{
+        //  subscription.classList.add("animate__animated", "animate__bounce");
+        yearlyPrices.forEach((item)=>{
           item.textContent = "Monthly price based on annual subscription"
-         })
+        })
         } else {
-          
-          
-          priceYearly.forEach((item)=>{
-            item.textContent = "Monthly price based on 6 month subscription"
-           })
+          yearlyPrices.forEach((item)=>{
+            item.textContent = " Monthly price based on 6 month subscription"
+          })
         }
         
         if (index === 1) {
@@ -432,7 +438,9 @@ function showActiveIdintity(persoanlParam,companyParam){
 function togglePersonalCompany(){
    radioInput.forEach((item)=>{
     item.addEventListener('click',()=>{
+      registerForm.classList.add('active')
       hideSelectors()
+      stepsRegister++
       if(item.getAttribute('id')=='personal'){
         activePersonal = true
         activeCompany = false
@@ -441,10 +449,43 @@ function togglePersonalCompany(){
         activePersonal = true
       }
       showActiveIdintity(activePersonal,activeCompany)
-
+       backButton()
     })
    })
     
   
 }
 togglePersonalCompany()
+
+
+
+function backButton(){
+  
+  if(stepsRegister>0){
+    backButtonRegister.classList.add('active')
+  }else {
+    backButtonRegister.classList.remove('active')
+   
+
+  }
+  backButtonRegister.addEventListener('click',()=>{
+   personalWidget.classList.remove('active')
+   companyWidget.classList.remove('active')
+   selectorsIdentity.classList.remove('hide')
+   backButtonRegister.classList.remove('active')
+   registerForm.classList.remove('active')
+   activeCompany=false
+   activePersonal=false
+    
+  })
+}
+function compnayFlow(){
+  const nextBtn = document.querySelector(".registerForm__company__container--next")
+  let step = 0
+ 
+  nextBtn.addEventListener('click',()=>{
+    step++
+  })
+
+}
+compnayFlow()
