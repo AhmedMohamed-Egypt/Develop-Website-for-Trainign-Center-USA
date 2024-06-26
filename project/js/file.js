@@ -164,7 +164,7 @@ function swiperPricingPage() {
           slidesPerView: 3,
         },
         1500: {
-          slidesPerView: 4,
+          slidesPerView: 5,
         },
       },
       navigation: {
@@ -183,9 +183,8 @@ function toggleBtns() {
   const toggleBtns = document.querySelectorAll(
     ".pricingPage__container--toggleBtns button"
   );
-  const subscription = document.querySelector(
-    ".pricingPage__container--subscription"
-  );
+
+  const priceYearly = document.querySelectorAll(".cardpricing__desc")
   const allPrices = document.querySelectorAll(".cardpricing__price--value");
   function fillPrices(prices) {
     allPrices.forEach((item, index) => {
@@ -201,13 +200,19 @@ function toggleBtns() {
           toggleBtns[i].classList.remove("active");
         }
         item.classList.add("active");
-        /*
+        
         if (index === 1) {
-          subscription.classList.add("animate__animated", "animate__bounce");
+         priceYearly.forEach((item)=>{
+          item.textContent = "Monthly price based on annual subscription"
+         })
         } else {
-          subscription.classList.remove("animate__animated", "animate__bounce");
+          
+          
+          priceYearly.forEach((item)=>{
+            item.textContent = "Monthly price based on 6 month subscription"
+           })
         }
-        */
+        
         if (index === 1) {
           const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
           fillPrices(applyDiscount);

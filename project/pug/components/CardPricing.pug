@@ -7,7 +7,7 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
    span(class="weight-700 size-20 d-inline-block  cardpricing__price--sign") $
    span(class="cardpricing__price--value")=price
    span(class="deepgreen size-18 font-outfit weight-700") /Mon
-  p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10")=desc 
+  p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc")=desc 
   ul(class="cardpricing__list")
    each val in list 
     li(class="mrb-8 d-flex align-items-center")
