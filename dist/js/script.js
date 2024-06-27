@@ -392,8 +392,9 @@ function calculateSaving() {
     item.addEventListener("keyup", () => {
       for (let i = 0; i < allInputs.length; i++) {
         if ( index === i ) {
-          if (!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>0) {
+          if (!isNaN(item.value) && item.value.trim().length !== 0 && (i===0?+item.value>.5:+item.value>0)) {
             data[keysData[i]] = +item.value;
+            
           //  data[keysData[1]] = +item.value - .5;
             allParent[index].classList.add("right");
             allParent[index].classList.remove("wrong");
@@ -409,32 +410,24 @@ function calculateSaving() {
 
       let  dewValue = data.livingTraing - .5
       if(index===0){
-        if(!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>0){
+        if(!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>.5){
           data.DewdroppersTraining=dewValue
           allInputs[1].value = dewValue
         }else {
           dewValue = 0
           allInputs[1].value = dewValue
+         
         }
     
         
       }
-     /*
+     
+
+    
+      
 
       if (
-        data.DewdroppersTraining > 0 &&
-        data.livingTraing <= data.DewdroppersTraining
-      ) {
-        fillingError(
-          "Live Training should be greater than Dewdroppers Training"
-        );
-      } else {
-        fillingError("");
-      }
-      */
-
-      if (
-        data.livingTraing !== false &&
+        data.livingTraing !== false    && 
         data.DewdroppersTraining !== false &&
         data.staffRate !== false &&
         data.noOfStaff !== false &&
