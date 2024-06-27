@@ -652,12 +652,21 @@ function showSelectedCompanyItem(){
      </div>
     `
    }
+   function showError(errorTxt){
+    conatinerSelected.innerHTML = `
+    <div>
+    ${errorTxt}
+    </div>
+   `
+   }
   selectedItem.forEach((item)=>{
     item.addEventListener('click',()=>{
       const name = item.getAttribute('id')
       const value = item.getAttribute('value')
+      
       fillData(name,value)
     })
+    showError('Please Select Plan')
   })
 }
 showSelectedCompanyItem()
