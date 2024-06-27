@@ -408,14 +408,17 @@ function calculateSaving() {
         
       }
 
+
       let  dewValue = data.livingTraing - .5
       if(index===0){
         if(!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>.5){
           data.DewdroppersTraining=dewValue
           allInputs[1].value = dewValue
+          fillingError()
         }else {
           dewValue = 0
           allInputs[1].value = dewValue
+          fillingError('Should be greater than .5')
          
         }
     
