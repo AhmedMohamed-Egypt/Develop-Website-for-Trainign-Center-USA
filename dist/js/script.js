@@ -419,7 +419,7 @@ function calculateSaving() {
     
         
       }
-     
+     /*
 
       if (
         data.DewdroppersTraining > 0 &&
@@ -431,6 +431,7 @@ function calculateSaving() {
       } else {
         fillingError("");
       }
+      */
 
       if (
         data.livingTraing !== false &&
