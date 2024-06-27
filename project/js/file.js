@@ -377,16 +377,24 @@ function calculateSaving() {
   function fillingError(erorrTxt) {
     errorForm.textContent = erorrTxt;
   }
+  /*
   function activeSavingResult() {
     savingResulInput.classList.add("active");
   }
+  */
 
   allInputs.forEach((item, index) => {
+    console.log(item)
+    if(index===1){
+        
+      item.setAttribute('disabled',true)
+    }
     item.addEventListener("keyup", () => {
       for (let i = 0; i < allInputs.length; i++) {
-        if (index === i) {
-          if (!isNaN(item.value) && item.value.trim().length !== 0) {
+        if ( index === i ) {
+          if (!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>0) {
             data[keysData[i]] = +item.value;
+          //  data[keysData[1]] = +item.value - .5;
             allParent[index].classList.add("right");
             allParent[index].classList.remove("wrong");
           } else {
@@ -395,7 +403,24 @@ function calculateSaving() {
             allParent[index].classList.remove("right");
           }
         }
+     
+        
       }
+
+      let  dewValue = data.livingTraing - .5
+      if(index===0){
+        if(!isNaN(item.value) && item.value.trim().length !== 0 && +item.value>0){
+          data.DewdroppersTraining=dewValue
+          allInputs[1].value = dewValue
+        }else {
+          dewValue = 0
+          allInputs[1].value = dewValue
+        }
+    
+        
+      }
+     
+
       if (
         data.DewdroppersTraining > 0 &&
         data.livingTraing <= data.DewdroppersTraining
@@ -433,7 +458,7 @@ function calculateSaving() {
   if (calcButton) {
     calcButton.addEventListener("click", () => {
       const slotOne =
-        (data.livingTraing - data.DewdroppersTraining) *
+        (data.livingTraing - (data.DewdroppersTraining)) *
         data.staffRate *
         data.noOfStaff *
         data.noOfCamapign;
@@ -453,6 +478,7 @@ function calculateSaving() {
         // savingResulInput.setAttribute("placeholder", savingResult);
         savingResulInput.value = savingResult;
       }
+      console.log(data)
       scrollingCalculator();
     });
   }
@@ -466,7 +492,7 @@ function distributePop() {
   );
   allPops.forEach((item) => {
     if (item) {
-      console.log(item.clientHeight + 20);
+     
       item.style.top = -(item.clientHeight + 10) + "px";
     }
   });
@@ -571,32 +597,35 @@ function togglePersonalCompany() {
 togglePersonalCompany();
 
 function backButton() {
-  backButtonRegister.addEventListener("click", () => {
+  if(backButtonRegister){
+    backButtonRegister.addEventListener("click", () => {
     
-    if (!selectCompany || step === 0) {
-      personalWidget.classList.remove("active");
-      companyWidget.classList.remove("active");
-      selectorsIdentity.classList.remove("hide");
-      backButtonRegister.classList.remove("active");
-      registerForm.classList.remove("active");
-      activeCompany = false;
-      activePersonal = false;
-    } else {
-      if (stepSpan >= 0) {
-        stepSpan--;
+      if (!selectCompany || step === 0) {
+        personalWidget.classList.remove("active");
+        companyWidget.classList.remove("active");
+        selectorsIdentity.classList.remove("hide");
+        backButtonRegister.classList.remove("active");
+        registerForm.classList.remove("active");
+        activeCompany = false;
+        activePersonal = false;
+      } else {
+        if (stepSpan >= 0) {
+          stepSpan--;
+         
+        }
+        removeProgressSpan(stepSpan+1);
        
+  
+        if (step >= 0) {
+          step--;
+          activeSlide();
+        }
       }
-      removeProgressSpan(stepSpan+1);
-     
+  
+      
+    });
+  }
 
-      if (step >= 0) {
-        step--;
-        activeSlide();
-      }
-    }
-
-    
-  });
 }
 backButton();
 function compnayFlow() {
