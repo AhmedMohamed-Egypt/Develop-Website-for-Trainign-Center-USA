@@ -68,11 +68,15 @@
         height: 100%;
         .cardpricing {
            height: auto;
-           padding-bottom: 20px;
+          
+        }
+        .cardpricing:not(.cardpricing__Enterprise){
+            padding-bottom: 20px;
         }
         .cardpricing__Enterprise--getAqoute{
          border-bottom-left-radius: 12px;
          border-bottom-right-radius: 12px;
+         padding-bottom: 50px;
         }
         &__container{
             >div{
@@ -93,6 +97,20 @@
     &__company{
      
         &__container{
+            .registerCompany__selectedItem{
+    
+                text-align: center;
+                padding: 20px 0;
+                border-radius: 10px;
+                background-color: #294488;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2{
+                    margin-bottom: 25px;
+                }
+            }
             &--next{
                 width: 100%;
                 background-color: #14192a !important;

@@ -614,3 +614,24 @@ function compnayFlow() {
   }
 }
 compnayFlow();
+
+function showSelectedCompanyItem(){
+  const conatinerSelected = document.querySelector(".registerCompany__selectedItem")
+  const selectedItem = document.querySelectorAll(".cardpricing__selectPlan--input")
+   function fillData(planName,valuePlan){
+    conatinerSelected.innerHTML = `
+     <div>
+    <h2 class="upperCaseFirstLtr">Plan: ${planName}</h2>
+    <h3>Price: ${valuePlan} USD</h3>
+     </div>
+    `
+   }
+  selectedItem.forEach((item)=>{
+    item.addEventListener('click',()=>{
+      const name = item.getAttribute('id')
+      const value = item.getAttribute('value')
+      fillData(name,value)
+    })
+  })
+}
+showSelectedCompanyItem()
