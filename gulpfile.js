@@ -45,8 +45,7 @@ gulp.task("fonts", function () {
 
 gulp.task("js", function () {
   return gulp
-    .src("project/js/file.js")
-    .pipe(concat("script.js"))
+    .src("project/js/*.js")
     .pipe(gulp.dest("dist/js"))
     .pipe(browserSync.stream());
 });
