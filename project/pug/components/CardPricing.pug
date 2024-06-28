@@ -7,12 +7,12 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
    span(class="weight-700 size-20 d-inline-block  cardpricing__price--sign") $
    span(class="cardpricing__price--value")=price
    span(class="deepgreen size-18 font-outfit weight-700") /month <span class="cardpricing__price--suffix d-inline-block size-10">th</span>
-  p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc")=desc 
+  p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc text-center")=desc 
   ul(class="cardpricing__list")
-   each val in list 
+   each val,index in list 
     li(class="mrb-8 d-flex align-items-center")
      span(class="cardpricing__list--dot mrt-10")
-     span(class="deepgreen size-15 font-outfit weight-500 ")=val
+     span(class=`deepgreen size-15 font-outfit weight-500 cardpricing__list--txt ${title==="regional" && index===0?'weight-800':''} ${title==="National" && index===0?'weight-800':''}`)=val
   a(href="#" class="customBtn choosePlan")=cta
 mixin minicard(titleCard,descCard)
  div 

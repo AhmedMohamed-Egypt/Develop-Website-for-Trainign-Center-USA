@@ -157,26 +157,26 @@ function swiperPricingPage() {
   );
   if (swiperPricing) {
     const swiper = new Swiper(".pricingPage__swiper .swiper", {
-      // Default parameters
-      slidesPerView: 3,
+      // Default parameters     
       spaceBetween: 5,
       speed: 500,
-
       // Responsive breakpoints
       breakpoints: {
-        // when window width is >= 320px
+        
         320: {
           slidesPerView: 1,
         },
-        // when window width is >= 480px
-        767: {
+        768: {
           slidesPerView: 2,
         },
-        // when window width is >= 640px
+       992: {
+          slidesPerView: 3,
+        },
+        
         1200: {
           slidesPerView: 3,
         },
-        1500: {
+        1280: {
           slidesPerView: 5,
         },
       },

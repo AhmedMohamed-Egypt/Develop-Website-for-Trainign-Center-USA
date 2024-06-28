@@ -37,7 +37,10 @@
             li{
                 margin-bottom: 10px;
                 position: relative;
-                padding-left: 20px;
+                padding-left: 15px;
+                font-size: 15px;
+                width: 90%;
+                margin-left: auto;
                 &::after{
                     @include after();
                     background-size: cover;
@@ -134,11 +137,21 @@ margin-bottom: 15px;
     &__list{
         margin-bottom: 60px;
         margin-top: 20px;
+        @media screen and (max-width: 1500px) and (min-width: 1279px){
+         
+            margin-top: 10px;
+        }
+
         li{
             span{
                 @include max(500px){
                     font-size: 16px;
                 }
+            }
+        }
+        &--txt{
+            @media screen and (max-width: 1500px) and (min-width: 1279px) {
+            font-size: 14px;
             }
         }
         &--dot{

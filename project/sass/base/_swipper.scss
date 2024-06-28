@@ -92,9 +92,13 @@
 width: 100%;
 margin: 0;
 bottom: auto;
+display: none;
+@include max(1280px){
+    display: block;
+}
 
 .swiper-button-next{
-    right: -35px;
+    right: -20px;
     @include max(500px){
         right: -10px;
     
@@ -104,7 +108,7 @@ bottom: auto;
     }
 }
 .swiper-button-prev{
-  left: -35px;
+  left: -20px;
   @include max(500px){
     left: -10px;
 }
