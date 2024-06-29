@@ -156,6 +156,9 @@
                 .card-js{
                     width: 90%;
                     margin: auto;
+                    &.hide{
+                        display: none;
+                    }
                 }
                 h2{
                     margin-bottom: 25px;

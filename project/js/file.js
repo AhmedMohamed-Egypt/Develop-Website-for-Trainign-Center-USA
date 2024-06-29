@@ -134,7 +134,9 @@ function fireModal(btn, closeBtn, classModal) {
     closeBtn.addEventListener("click", () => {
       document.body.classList.remove(classModal);
      
-      if(closeBtn.classList.contains('modalRegister__closeBt')) {
+      if(closeBtn.classList.contains('modalRegister__closeBtn')) {
+        
+        console.log(closeBtn)
         activeRegister = false
         resetBackProgress()
       }
@@ -688,7 +690,12 @@ function compnayFlow() {
 compnayFlow();
 
 function showSelectedCompanyItem(){
-
+  function hideCardJs(){
+    document.querySelector('.card-js').classList.add('hide')
+  }
+  function showCardJs(){
+    document.querySelector('.card-js').classList.remove('hide')
+  }
     fillData=(planName,valuePlan)=>{
     conatinerSelected.innerHTML = `
      <div>
@@ -697,6 +704,7 @@ function showSelectedCompanyItem(){
      </div>
     
     `
+    showCardJs()
    }
    function showError(errorTxt){
     conatinerSelected.innerHTML = `
@@ -704,6 +712,8 @@ function showSelectedCompanyItem(){
     ${errorTxt}
     </div>
    `
+   hideCardJs()
+   
    }
   selectedItem.forEach((item)=>{
     item.addEventListener('click',()=>{
