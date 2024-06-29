@@ -6,7 +6,7 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
   h3(class="font-outfit deepdrkblue size-46 weight-400 cardpricing__price")
    span(class="weight-700 size-20 d-inline-block  cardpricing__price--sign") $
    span(class="cardpricing__price--value")=price
-   span(class="deepgreen size-18 font-outfit weight-700") /month <span class="cardpricing__price--suffix d-inline-block size-10">th</span>
+   span(class="deepgreen size-18 font-outfit weight-700") /month 
   p(class="deepgreen font-outfit weight-600 size-12 mtop-10 mrb-10 cardpricing__desc text-center")=desc 
   ul(class="cardpricing__list")
    each val,index in list 

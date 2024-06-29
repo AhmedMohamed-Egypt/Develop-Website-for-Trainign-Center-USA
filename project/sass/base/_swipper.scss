@@ -119,7 +119,11 @@ display: none;
 }
 .registerCompany__cards{
 .pagination {
-    top: 0;
+    top: 50%;
+    height: 25px;
+    margin: 0;
+    z-index: 1;
+    bottom: auto;
     .swiper-button-next{
         right: -20px;
         @include max(500px){

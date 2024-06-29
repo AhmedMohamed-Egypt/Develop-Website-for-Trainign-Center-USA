@@ -97,6 +97,52 @@
     &__company{
      
         &__container{
+            .registerCompany__cards{
+                &--switchPalns {
+                    border: 1px solid $lightPink;
+                    border-radius: 80px;
+                    width: 262px;
+                    margin: auto;
+                    padding: 3px 5px;
+                    position: relative;
+                    &--input{
+                        display: none;
+                    }
+                    &--label{
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 999999;
+                        
+                    }
+                    &--div{
+                        cursor: pointer;
+                        width: 50%;
+                        cursor: pointer;
+                        position: relative;
+                        text-align: center;
+                        &.active{
+                            &::after{
+                                background-color: #a7c78f !important;
+                                width: 100%;
+                                z-index: 99;
+                            }
+                            .registerCompany__cards--switchPalns--label{
+                                color: $white;
+                            }
+                           
+                        }
+                        &::after{
+                            @include after();
+                            border-radius: 20px;
+                            z-index: -1;
+                            width: 0;
+                            
+                            transition: .5s;
+                            
+                        }
+                    }
+                }
+            }
             .registerCompany__selectedItem{
     
                 text-align: center;
@@ -107,13 +153,37 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                .card-js{
+                    width: 90%;
+                    margin: auto;
+                }
                 h2{
                     margin-bottom: 25px;
                 }
+                input{
+                    background: none !important;
+                    box-shadow: none;
+                    border-color: $white;
+                    color: $white;
+                    &::placeholder{
+                        color: $white;
+                    }
+                }
+                .card-js .card-number-wrapper, .card-js .cvc-wrapper, .card-js .expiry-wrapper, .card-js .name-wrapper{
+                    box-shadow: none !important;
+                }
+
             }
             &--next{
                 width: 100%;
                 background-color: #14192a !important;
+                position: absolute;
+                width: 80%;
+                bottom: -10px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                z-index: 999999999999;
             }
             &--steps{
                 display: flex;

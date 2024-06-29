@@ -1,3 +1,4 @@
+const fixedPrice = [30, 60, 130, 220];
 let plan;
 let savingResult;
 let error;
@@ -21,8 +22,21 @@ const closeBtnModalRegister = document.querySelector(
 );
 const backButtonRegister = document.querySelector(".modalRegister__backBtn");
 const registerForm = document.querySelector(".registerForm");
-const yearlyPrices = document.querySelectorAll(".cardpricing__desc");
-
+let selectedPalnName;
+let selectedValuePlan;
+const registerPlanInputs = document.querySelectorAll(".cardpricing__selectPlan--input")
+let activeRegister = false
+localStorage.setItem('plansubscribe','6 Months')
+let fillData;
+let stepForm = 2
+const conatinerSelected = document.querySelector(".registerCompany__selectedItem--details")
+const selectedItem = document.querySelectorAll(".cardpricing__selectPlan--input")
+function fillInputRegister(priceParam){
+  registerPlanInputs.forEach((item,index)=>{
+    item.value = priceParam[index]
+  })
+}
+fillInputRegister(fixedPrice)
 function translateElemnts() {
   const allImgs = document.querySelectorAll(
     ".herocontent__leftside--managers--imgs img"
@@ -106,6 +120,12 @@ function fireModal(btn, closeBtn, classModal) {
       item.addEventListener("click", (e) => {
         e.preventDefault();
         document.body.classList.add(classModal);
+        if(item.classList.contains('choosePlan')){
+          
+          activeRegister = true
+        }else {
+          activeRegister = false
+        }
       });
     }
   });
@@ -113,7 +133,11 @@ function fireModal(btn, closeBtn, classModal) {
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       document.body.classList.remove(classModal);
-      resetBackProgress()
+     
+      if(closeBtn.classList.contains('modalRegister__closeBt')) {
+        activeRegister = false
+        resetBackProgress()
+      }
 
     });
   }
@@ -222,56 +246,74 @@ function swiperPricingPage() {
 swiperPricingPage();
 
 //toggle Button
-const fixedPrice = [30, 60, 130, 220];
-const toggleBtnsPricing = document.querySelectorAll(
-  ".pricingPage__container--toggleBtns button"
-);
-const allPrices = document.querySelectorAll(".cardpricing__price--value");
+
+const toggleBtnsPricing = document.querySelectorAll(".pricingPage__container--toggleBtns button");
+const labelRegisterBtns = document.querySelectorAll(".registerCompany__cards--switchPalns--div")
+const allPrices = document.querySelectorAll(".pricingPage__swiper .cardpricing__price--value");
 const allPricesRegister = document.querySelectorAll(
   ".registerCompany__cards .cardpricing__price--value"
 );
-function toggleBtns() {
-  function fillPrices(prices, priceElmnts) {
-    priceElmnts.forEach((item, index) => {
-      item.textContent = prices[index];
-    });
-  }
-  fillPrices(fixedPrice, allPrices);
-  fillPrices(fixedPrice, allPricesRegister);
+const yearlyPrices = document.querySelectorAll(".pricingPage__swiper .cardpricing__desc");
+const yearlyPricesRegister = document.querySelectorAll(".registerCompany__cards .cardpricing__desc");
 
-  toggleBtnsPricing.forEach((item, index) => {
+function fillPrices(prices, priceElmnts) {
+  priceElmnts.forEach((item, index) => {
+    item.textContent = prices[index];
+  });
+}
+fillPrices(fixedPrice, allPrices);
+fillPrices(fixedPrice, allPricesRegister);
+
+function toggleBtns(btns,pricesItems,txtdesc,switchBtns) {
+  /*
+  if(activeRegister){
+    registerPlanInputs.forEach((item)=>{
+      item.value = 5
+    })
+  }
+  */
+  btns.forEach((item, index) => {
     if (item) {
       item.addEventListener("click", () => {
-        for (let i = 0; i < toggleBtnsPricing.length; i++) {
-          toggleBtnsPricing[i].classList.remove("active");
+        for (let i = 0; i < switchBtns.length; i++) {
+          switchBtns[i].classList.remove("active");
         }
         item.classList.add("active");
 
         if (index === 1) {
           //  subscription.classList.add("animate__animated", "animate__bounce");
-          yearlyPrices.forEach((item) => {
+          txtdesc.forEach((item) => {
             item.textContent = "Monthly price based on annual subscription";
           });
         } else {
-          yearlyPrices.forEach((item) => {
+          txtdesc.forEach((item) => {
             item.textContent = " Monthly price based on 6 month subscription";
           });
         }
-
         if (index === 1) {
           const applyDiscount = fixedPrice.map((item) => item - item * 0.2);
-          fillPrices(applyDiscount, allPrices);
-          fillPrices(fixedPrice, allPricesRegister);
+          fillPrices(applyDiscount, pricesItems);
+          if(activeRegister) fillInputRegister(applyDiscount)
+           selectedValuePlan = document.querySelector('.cardpricing__selectPlan--input.active').value
+           
         } else {
-          fillPrices(fixedPrice, allPrices);
-
-          fillPrices(fixedPrice, allPricesRegister);
+          fillPrices(fixedPrice, pricesItems);
+          if(activeRegister) fillInputRegister(fixedPrice)
+            selectedValuePlan = document.querySelector('.cardpricing__selectPlan--input.active').value
         }
+       if(item.classList.contains('registerCompany__cards--switchPalns--div')){
+        fillData(selectedPalnName,selectedValuePlan)
+
+        localStorage.setItem('plansubscribe',item.querySelector('input').getAttribute('value'))
+       }
+        
       });
     }
   });
+ 
 }
-toggleBtns();
+toggleBtns(toggleBtnsPricing,allPrices,yearlyPrices,toggleBtnsPricing);
+toggleBtns(labelRegisterBtns,allPricesRegister,yearlyPricesRegister,labelRegisterBtns)
 
 //addpricing page class
 
@@ -384,7 +426,7 @@ function calculateSaving() {
   */
 
   allInputs.forEach((item, index) => {
-    console.log(item)
+   
     if(index===1){
         
       item.setAttribute('disabled',true)
@@ -625,13 +667,17 @@ function backButton() {
 
 }
 backButton();
+
 function compnayFlow() {
   //activeSlide();
 
   if (nextBtn) {
     nextBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      step++;
+      if(step<=stepForm){
+        step++
+      }
+      
       stepSpan++;
       activeSlide();
       progressSpan(stepSpan);
@@ -642,12 +688,11 @@ function compnayFlow() {
 compnayFlow();
 
 function showSelectedCompanyItem(){
-  const conatinerSelected = document.querySelector(".registerCompany__selectedItem--details")
-  const selectedItem = document.querySelectorAll(".cardpricing__selectPlan--input")
-   function fillData(planName,valuePlan){
+
+    fillData=(planName,valuePlan)=>{
     conatinerSelected.innerHTML = `
      <div>
-    <h2 class="upperCaseFirstLtr">Plan: ${planName}</h2>
+    <h2 class="upperCaseFirstLtr">Plan: ${planName} based on ${localStorage.getItem('plansubscribe')} </h2>
     <h3>Price: ${valuePlan} USD</h3>
      </div>
     
@@ -662,11 +707,15 @@ function showSelectedCompanyItem(){
    }
   selectedItem.forEach((item)=>{
     item.addEventListener('click',()=>{
-      const name = item.getAttribute('id')
-      const value = item.getAttribute('value')
-      
-      fillData(name,value)
+      selectedPalnName = item.getAttribute('id')
+      selectedValuePlan = item.getAttribute('value')
+      fillData(selectedPalnName,selectedValuePlan)
+      for(let i = 0 ; i < selectedItem.length;i++){
+        selectedItem[i].classList.remove('active')
+      }
+      item.classList.add('active')
     })
+   
     showError('Please Select Plan')
   })
 }

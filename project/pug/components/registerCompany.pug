@@ -8,20 +8,21 @@
  div(class="registerCompany__companyInfo companysteps active")
   p(class="font-popinos size-17 weight-500 mrb-15") Tell Us about your Company 
   div 
-   input(type="text" placeholder="Company Name")
+   input(type="text" placeholder="Company Name" name="companyname" value="" required)
   div 
    input(type="text" placeholder="Address")
   div 
-   input(type="text" placeholder="Phone Number")
+   input(type="tel" placeholder="Phone Number" name="phonNumber" value="" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}")
   div 
    input(type="text" placeholder="Total Number of Staff")
  div(class="registerCompany__companyUser companysteps")
   include ./userInfo.pug
  div(class="registerCompany__cards companysteps")
+  include ./registerPlans.pug
   include ./registerCompanyCards.pug
  div(class="registerCompany__selectedItem companysteps ")
   div(class="registerCompany__selectedItem--details")
-  <div style="margin-top: 50px">
+  <div>
     <div class="card-js" data-capture-name="true"></div>
   </div>
  div(class="")
