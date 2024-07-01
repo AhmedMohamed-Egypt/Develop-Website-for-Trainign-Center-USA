@@ -8,8 +8,11 @@
     position: relative;
     height: 820px;
     @include max(500px){
+        &:not(.cardpricing__Enterprise){
+            padding-bottom: 25px !important;
+        }
         max-height: 900px;
-        padding-bottom: 25px !important;
+        
         height: auto;
     }
     &__Enterprise{

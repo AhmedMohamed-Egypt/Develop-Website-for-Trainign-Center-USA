@@ -145,3 +145,29 @@ display: none;
     }
 }
 }
+.pricingPage__swiper{
+    .cardpricing {
+        @include max(500px){
+            max-width: 90%;
+        }
+    }
+}
+.registerCompany__cards{
+    @include max(500px){
+        .cardpricing__title{
+            padding-top: 10px;
+            padding-bottom: 10px;
+           }
+           .cardpricing__selectPlan{
+            margin: 5px 0;
+            &--label{
+                padding: 5px 0;
+            }
+           }
+           .swiper {
+            padding-bottom: 15px !important;
+           }
+    }
+   
+}
+//

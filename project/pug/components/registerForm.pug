@@ -4,20 +4,21 @@ mixin radio(forId,name,className)
    label(for=`${forId}`)=forId
 
 mixin registerPersonal(className)
- div(class=className)
-  div 
-   p(class="font-popinos size-17 weight-500") Register User 
-  include ./userInfo.pug
-  div(class="pointer")
-   input(type="checkbox" id="terms")
-   label(for="terms" ) Accept Terms
+ form
+  div(class=className)
+   div 
+    p(class="font-popinos size-17 weight-500") Register User 
+   include ./userInfo.pug
+   div(class="pointer")
+    input(type="checkbox" id="terms")
+    label(for="terms" ) Accept Terms
    
-  div 
-   button(type="submit" class="btn customBtn w-100") Sign Up
+   div 
+    button(type="submit" class="btn customBtn w-100") Sign Up
 
 
 div(class='registerForm')
- form
+ 
   div(class="registerForm__selectors d-flex align-items-center justify-content-center")
    +radio('company','identitiy')
    +radio('personal','identitiy','mrl-10')
