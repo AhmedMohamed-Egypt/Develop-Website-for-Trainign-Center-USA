@@ -11,6 +11,7 @@ let selectedPlanName;
 let selectedPlanValue;
 let fillDataPlan;
 let resetDefault;
+let planYearlyMonth=document.querySelector(".registerCompany__cards--switchPalns--div.active").querySelector('input').value
 
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");
@@ -256,7 +257,7 @@ const inputRegister = document.querySelectorAll(
   ".cardpricing__selectPlan--input"
 );
 const titleCardsRegister = document.querySelectorAll(
-  ".registerCompany__cards .cardpricing__title"
+  ".registerCompany__cards .cardpricing__title:not(.exclude)"
 );
 const titlesLabels = document.querySelectorAll(
   ".cardpricing__selectPlan--label"
@@ -268,7 +269,7 @@ function fillTitle(titles) {
 }
 function fillPrices(priceElmnts, prices) {
   const titleCards = document.querySelectorAll(
-    ".pricingPage__swiper  .cardpricing__title"
+    ".pricingPage__swiper  .cardpricing__title:not(.exclude)"
   );
  
   const getPrices = prices.map((item) => item.price);
@@ -327,14 +328,14 @@ function toggleBtns(btns, pricesItems, txtdesc, switchBtns) {
           );
           
           fillPrices(pricesItems, applyDiscount);
-          if(item.classList.contains('registerCompany__cards--switchPalns--div') && !errorSelect){
+          if(item.classList.contains('registerCompany__cards--switchPalns--div') && errorSelect==false){
             if(document.querySelector('.focused')){
             selectedPlanValue = document.querySelector('.focused').querySelector('input').getAttribute('value')
             selectedPlanName = document.querySelector('.focused').querySelector('input').getAttribute('id')
             }
             
-            const planNamePeriod = item.querySelector('input').getAttribute('value')
-              fillDataPlan(selectedPlanValue,selectedPlanName,planNamePeriod)
+            planYearlyMonth = item.querySelector('input').getAttribute('value')
+              fillDataPlan(selectedPlanValue,selectedPlanName,planYearlyMonth)
             updateFillInputRegister(applyDiscount);
          
           }
@@ -343,14 +344,14 @@ function toggleBtns(btns, pricesItems, txtdesc, switchBtns) {
         } else {
           fillPrices(pricesItems, fixedPricePlans);
           const fixedPrices = fixedPricePlans.map((item)=>item.price)
-           if(item.classList.contains('registerCompany__cards--switchPalns--div') && !errorSelect){
+           if(item.classList.contains('registerCompany__cards--switchPalns--div') && errorSelect==false){
               if(document.querySelector('.focused')){
             selectedPlanValue = document.querySelector('.focused').querySelector('input').getAttribute('value')
             selectedPlanName = document.querySelector('.focused').querySelector('input').getAttribute('id')
             }
        
-             const planNamePeriod = item.querySelector('input').getAttribute('value')
-              fillDataPlan(selectedPlanValue,selectedPlanName,planNamePeriod)
+            planYearlyMonth = item.querySelector('input').getAttribute('value')
+              fillDataPlan(selectedPlanValue,selectedPlanName,planYearlyMonth)
              updateFillInputRegister(fixedPrices);
            //  fillDataPlan(selectedPlanValue,selectedPlanName)
           }
@@ -791,7 +792,7 @@ function selectPlanRegister() {
       selectedPlanValue = item.querySelector("input").getAttribute("value");
       errorSelect = false;
       removeErrorSelect();
-      fillDataPlan(selectedPlanValue, selectedPlanName,'based on 6 months');
+      fillDataPlan(selectedPlanValue, selectedPlanName,planYearlyMonth);
       for(let i = 0 ; i < selectPlanBtn.length;i++){
         selectPlanBtn[i].classList.remove('focused')
       }
