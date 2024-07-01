@@ -11,7 +11,10 @@ let selectedPlanName;
 let selectedPlanValue;
 let fillDataPlan;
 let resetDefault;
-let planYearlyMonth=document.querySelector(".registerCompany__cards--switchPalns--div.active").querySelector('input').value
+let planYearlyMonth;
+if(document.querySelector(".registerCompany__cards--switchPalns--div.active")){
+  planYearlyMonth = document.querySelector(".registerCompany__cards--switchPalns--div.active").querySelector('input').value
+}
 
 const savingResulInput = document.querySelector(".savingResult");
 const errorForm = document.querySelector(".saveTime__estimate--form__error");

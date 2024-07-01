@@ -171,3 +171,13 @@ display: none;
    
 }
 //
+.testmonial .pagination{
+    display: none;
+    @include max(992px){
+        display: block;
+    }
+}
+.testmonial .swiper-button-prev::after,.testmonial .swiper-button-next::after{
+    width: 20px !important;
+    height: 20px !important;
+}
