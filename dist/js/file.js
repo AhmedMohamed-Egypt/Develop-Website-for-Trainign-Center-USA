@@ -604,7 +604,7 @@ distributePop();
 
 let activeCompany = false;
 let activePersonal = false;
-const allChoosePlan = document.querySelectorAll(".choosePlan");
+const allChoosePlan = document.querySelectorAll(".choosePlanBtn");
 const closeModalChoosePlanBtn = document.querySelector(
   ".modalRegister__closeBtn"
 );

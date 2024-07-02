@@ -13,7 +13,7 @@ mixin cardPricing(classCard,title,price,desc,list,cta)
     li(class="mrb-8 d-flex align-items-center")
      span(class="cardpricing__list--dot mrt-10")
      span(class=`deepgreen size-15 font-outfit weight-500 cardpricing__list--txt ${title==="regional" && index===0?'weight-800':''} ${title==="National" && index===0?'weight-800':''}`)=val
-  a(href="#" class="customBtn choosePlan")=cta
+  a(href="#" class="customBtn choosePlan choosePlanBtn")=cta
 mixin minicard(titleCard,descCard)
  div 
    h3=titleCard
